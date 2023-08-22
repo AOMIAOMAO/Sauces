@@ -1,0 +1,12 @@
+{
+  "type": "sauces:sauce_making_machine",
+  "ingredient": {
+    "item": "minecraft:egg"
+  },
+  "bottle": {
+    "item": "minecraft:glass_bottle"
+  },
+  "inputCount": 2,
+  "output": "sauces:salad_dressing",
+  "processtime": 150
+}

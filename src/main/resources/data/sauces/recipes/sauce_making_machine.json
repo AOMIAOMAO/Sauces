@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " M ",
+    "A A",
+    "OOO"
+  ],
+  "key": {
+    "M": {
+      "tag": "minecraft:wooden_slabs"
+    },
+    "A": {
+      "item": "minecraft:glass"
+    },
+    "O": {
+      "item": "minecraft:stone_slab"
+    }
+  },
+  "result": {
+    "item": "sauces:sauce_making_machine"
+  }
+}

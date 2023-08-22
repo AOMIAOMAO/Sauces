@@ -1,0 +1,12 @@
+{
+  "type": "sauces:sauce_making_machine",
+  "ingredient": {
+    "item": "minecraft:milk_bucket"
+  },
+  "bottle": {
+    "item": "minecraft:glass_bottle"
+  },
+  "inputCount": 1,
+  "output": "sauces:cream",
+  "processtime": 150
+}

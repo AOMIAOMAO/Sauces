@@ -1,0 +1,12 @@
+{
+  "type": "sauces:sauce_making_machine",
+  "ingredient": {
+    "item": "minecraft:cocoa_beans"
+  },
+  "bottle": {
+    "item": "minecraft:glass_bottle"
+  },
+  "inputCount": 5,
+  "output": "sauces:chocolate_sauce",
+  "processtime": 150
+}

@@ -1,0 +1,14 @@
+{
+  "spread": {
+    "subtitle": "subtitles.sauces.spreading",
+    "sounds": [
+      "sauces:spread"
+    ]
+  },
+  "work_finished": {
+    "subtitle": "subtitles.sauces.work_finished",
+    "sounds": [
+      "sauces:work_finished"
+    ]
+  }
+}

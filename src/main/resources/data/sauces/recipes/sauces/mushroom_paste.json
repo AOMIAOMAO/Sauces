@@ -1,0 +1,12 @@
+{
+  "type": "sauces:sauce_making_machine",
+  "ingredient": {
+    "tag": "sauces:mushrooms"
+  },
+  "bottle": {
+    "item": "minecraft:glass_bottle"
+  },
+  "inputCount": 4,
+  "output": "sauces:mushroom_paste",
+  "processtime": 150
+}

@@ -1,0 +1,28 @@
+{
+  "itemGroup.sauces.main": "涂酱",
+
+  "item.sauces.salad_dressing": "沙拉酱瓶",
+  "item.sauces.jam": "果酱瓶",
+  "item.sauces.chocolate_sauce": "巧克力瓶",
+  "item.sauces.cream": "奶油瓶",
+  "item.sauces.mushroom_paste": "蘑菇酱瓶",
+  "item.sauces.black_pepper_sauce": "黑胡椒酱瓶",
+  "item.sauces.chilli_sauce": "辣椒酱瓶",
+
+  "item.sauces.sauces.salad_dressing": "酱料: 沙拉酱",
+  "item.sauces.sauces.jam": "酱料: 果酱",
+  "item.sauces.sauces.chocolate_sauce": "酱料: 巧克力酱",
+  "item.sauces.sauces.cream": "酱料: 奶油",
+  "item.sauces.sauces.mushroom_paste": "酱料: 蘑菇酱",
+  "item.sauces.sauces.black_pepper_sauce": "酱料: 黑胡椒酱",
+  "item.sauces.sauces.chilli_sauce": "酱料: 辣椒酱",
+
+  "block.sauces.plate_block": "木盘",
+  "block.sauces.sauce_making_machine_block": "酱料制作机",
+
+  "subtitles.sauces.spreading": "涂酱中",
+  "subtitles.sauces.work_finished":"叮~",
+
+  "tip.sauces.sauce_making_machine.input_count": "放入数量: %s",
+  "tip.sauces.sauce_making_machine.processtime": "处理时间: %s s"
+}

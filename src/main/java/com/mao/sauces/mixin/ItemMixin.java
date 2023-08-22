@@ -1,0 +1,32 @@
+package com.mao.sauces.mixin;
+
+import com.mao.sauces.item.SaucesItem;
+import net.minecraft.client.item.TooltipContext;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.World;
+import org.spongepowered.asm.mixin.Final;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Overwrite;
+import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+
+import java.util.List;
+
+@Mixin(Item.class)
+public class ItemMixin{
+
+    @Inject(method = "appendTooltip", at = @At("HEAD"))
+    private void appendTooltipForFood(ItemStack stack, World world, List<Text> tooltip, TooltipContext context, CallbackInfo ci) {
+        if (stack.isFood() && stack.hasNbt()) {
+            String sauces = SaucesItem.getSauces(stack);
+            tooltip.add(Text.translatable("item.sauces.sauces" + "." + sauces).formatted(Formatting.GRAY));
+        }
+    }
+}

@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "sauces",
+  "version": "${version}",
+  "name": "Sauces",
+  "description": "Let's make food fun!",
+  "authors": [
+    "MaoMao"
+  ],
+  "contact": {
+    "homepage": "null",
+    "sources": "null",
+    "issues": "null"
+  },
+  "license": "MIT",
+  "icon": "assets/sauces/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "rei_client": [
+      "com.mao.sauces.compat.rei.SaucesREIPlugin"
+    ],
+    "fabric-datagen": [
+      "com.mao.sauces.datagen.ModDataGeneration"
+    ],
+    "client": [
+      "com.mao.sauces.SaucesClient"
+    ],
+    "main": [
+      "com.mao.sauces.Sauces"
+    ]
+  },
+  "mixins": [
+    "sauces.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "sauces:sauce_making_machine",
+  "ingredient": {
+    "tag": "sauces:fruit"
+  },
+  "bottle": {
+    "item": "minecraft:glass_bottle"
+  },
+  "inputCount": 3,
+  "output": "sauces:jam",
+  "processtime": 150
+}
