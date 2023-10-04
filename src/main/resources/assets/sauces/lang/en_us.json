@@ -1,13 +1,23 @@
 {
   "itemGroup.sauces.main": "Sauces",
 
+  "item.sauces.empty_sauce_bottle": "Empty Sauce Bottle",
+  "item.sauces.ketchup": "Ketchup",
   "item.sauces.salad_dressing": "Salad Dressing Bottle",
   "item.sauces.jam": "Jam Bottle",
   "item.sauces.chocolate_sauce": "Chocolate Sauce Bottle",
   "item.sauces.cream": "Cream Bottle",
   "item.sauces.mushroom_paste": "Mushroom Paste Bottle",
-  "item.sauces.black_pepper_sauce": "Black Pepper Sauce",
+  "item.sauces.black_pepper_sauce": "Black Pepper Sauce Bottle",
   "item.sauces.chilli_sauce": "Chilli Sauce Bottle",
+  "item.sauces.peanut_butter": "Peanut Butter Bottle",
+
+  "item.sauces.chilli": "Chilli",
+  "item.sauces.peanut": "Peanut",
+  "item.sauces.tomato": "Tomato",
+  "item.sauces.chilli_seeds": "Chilli Seeds",
+  "item.sauces.peanut_kernels": "Peanut Kernels",
+  "item.sauces.tomato_seeds": "Tomato Seeds",
 
   "item.sauces.sauces.salad_dressing": "Sauces:Salad Dressing",
   "item.sauces.sauces.jam": "Sauces:Jam",
@@ -16,13 +26,21 @@
   "item.sauces.sauces.mushroom_paste": "Sauces:Mushroom Paste",
   "item.sauces.sauces.black_pepper_sauce": "Sauces:Black Pepper Sauce",
   "item.sauces.sauces.chilli_sauce": "Sauces:Chilli Sauce",
+  "item.sauces.sauces.peanut_butter": "Sauces:Peanut Butter",
+  "item.sauces.sauces.ketchup": "Sauces:Ketchup",
 
   "block.sauces.plate_block": "Plate",
   "block.sauces.sauce_making_machine_block": "Sauce Making Machine",
 
+  "block.sauces.chilli_crop_block": "Chilli Crop",
+  "block.sauces.peanut_crop_block": "Peanut Crop",
+  "block.sauces.tomato_crop_block": "Tomato Crop",
+
   "subtitles.sauces.spreading": "Spreading",
+  "subtitles.sauces.working": "Working",
   "subtitles.sauces.work_finished": "Work Finished",
 
+  "tips.player.plate": "It doesn't look delicious!",
   "tip.sauces.sauce_making_machine.input_count": "Input Count: %s",
   "tip.sauces.sauce_making_machine.processtime": "Process time: %s s"
 }

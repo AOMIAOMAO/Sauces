@@ -16,7 +16,7 @@ public class RecipesRegistry {
         Registry.register(Registries.RECIPE_SERIALIZER, new Identifier(Sauces.MOD_ID, id), serializer);
     }
 
-    public static void registerModRecipes(){
+    public static void registerModRecipes() {
         recipe(SauceMakingMachineRecipeSerializer.INSTANCE, SauceMakingMachineRecipe.Type.INSTANCE, "sauce_making_machine");
     }
 }

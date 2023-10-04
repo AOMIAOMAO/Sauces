@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "sauces:chilli"
+    }
+  ],
+  "result": {
+    "item": "sauces:chilli_seeds"
+  }
+}

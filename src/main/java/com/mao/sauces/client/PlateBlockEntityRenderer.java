@@ -13,7 +13,8 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.RotationAxis;
 
 public class PlateBlockEntityRenderer implements BlockEntityRenderer<PlateBlockEntity> {
-    public PlateBlockEntityRenderer(BlockEntityRendererFactory.Context context){}
+    public PlateBlockEntityRenderer(BlockEntityRendererFactory.Context context) {
+    }
 
 
     @Override

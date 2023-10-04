@@ -10,12 +10,12 @@ public class SoundsRegistry {
     public static final SoundEvent SPREAD = registerSoundEvents("spread");
     public static final SoundEvent WORK_FINISHED = registerSoundEvents("work_finished");
 
-    private static SoundEvent registerSoundEvents(String id){
-        Identifier sound = new Identifier(Sauces.MOD_ID + ":"+ id);
+    private static SoundEvent registerSoundEvents(String id) {
+        Identifier sound = new Identifier(Sauces.MOD_ID + ":" + id);
         return Registry.register(Registries.SOUND_EVENT, sound, SoundEvent.of(sound));
     }
 
-    public static void registerModSounds(){
+    public static void registerModSounds() {
         Sauces.LOGGER.debug("Registering Mod Sounds For" + Sauces.MOD_ID);
     }
 }

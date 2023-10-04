@@ -1,19 +1,21 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "XXX",
-    "XPX",
-    "XXX"
-  ],
+  "category": "misc",
   "key": {
-    "X": {
+    "g": {
       "item": "minecraft:stick"
     },
-    "P": {
+    "i": {
       "tag": "minecraft:planks"
     }
   },
+  "pattern": [
+    "ggg",
+    "gig",
+    "ggg"
+  ],
   "result": {
     "item": "sauces:plate"
-  }
+  },
+  "show_notification": true
 }

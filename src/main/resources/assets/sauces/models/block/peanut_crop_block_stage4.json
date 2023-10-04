@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "sauces:block/peanut_crop_block_stage4"
+  }
+}

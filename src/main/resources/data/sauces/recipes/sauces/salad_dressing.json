@@ -4,7 +4,7 @@
     "item": "minecraft:egg"
   },
   "bottle": {
-    "item": "minecraft:glass_bottle"
+    "item": "sauces:empty_sauce_bottle"
   },
   "inputCount": 2,
   "output": "sauces:salad_dressing",

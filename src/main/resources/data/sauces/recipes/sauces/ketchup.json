@@ -1,0 +1,12 @@
+{
+  "type": "sauces:sauce_making_machine",
+  "ingredient": {
+    "item": "sauces:tomato"
+  },
+  "bottle": {
+    "item": "sauces:empty_sauce_bottle"
+  },
+  "inputCount": 3,
+  "output": "sauces:ketchup",
+  "processtime": 150
+}

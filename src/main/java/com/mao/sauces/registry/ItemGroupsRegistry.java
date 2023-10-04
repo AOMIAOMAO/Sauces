@@ -13,10 +13,10 @@ import net.minecraft.util.Identifier;
 public class ItemGroupsRegistry {
     public static final RegistryKey<ItemGroup> ITEM_GROUP = RegistryKey.of(RegistryKeys.ITEM_GROUP, new Identifier(Sauces.MOD_ID, "main"));
 
-    public static void registerModItemGroups(){
+    public static void registerModItemGroups() {
         Registry.register(Registries.ITEM_GROUP, ITEM_GROUP, FabricItemGroup.builder()
                 .displayName(Text.translatable("itemGroup.sauces.main"))
-                .icon(ItemsRegistry.SAUCE_MAKING_MACHINE::getDefaultStack)
+                .icon(ItemsRegistry.PEANUT_BUTTER::getDefaultStack)
                 .build()
         );
     }

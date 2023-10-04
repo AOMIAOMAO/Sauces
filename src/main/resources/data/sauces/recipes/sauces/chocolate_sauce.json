@@ -4,7 +4,7 @@
     "item": "minecraft:cocoa_beans"
   },
   "bottle": {
-    "item": "minecraft:glass_bottle"
+    "item": "sauces:empty_sauce_bottle"
   },
   "inputCount": 5,
   "output": "sauces:chocolate_sauce",

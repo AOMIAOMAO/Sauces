@@ -10,7 +10,7 @@ import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 
-public class PlateBlockEntity extends BlockEntity implements BlockEntityInv{
+public class PlateBlockEntity extends BlockEntity implements BlockEntityInv {
     private Direction itemDirection = Direction.NORTH;
     private final DefaultedList<ItemStack> items = DefaultedList.ofSize(1, ItemStack.EMPTY);
 
@@ -18,7 +18,7 @@ public class PlateBlockEntity extends BlockEntity implements BlockEntityInv{
         super(EntityTypesRegistry.PLATE_BLOCK_ENTITY, pos, state);
     }
 
-    public Direction getItemDirection(){
+    public Direction getItemDirection() {
         return itemDirection;
     }
 

@@ -1,6 +1,8 @@
 {
   "itemGroup.sauces.main": "涂酱",
 
+  "item.sauces.empty_sauce_bottle": "空酱料瓶",
+  "item.sauces.ketchup": "番茄酱瓶",
   "item.sauces.salad_dressing": "沙拉酱瓶",
   "item.sauces.jam": "果酱瓶",
   "item.sauces.chocolate_sauce": "巧克力瓶",
@@ -8,6 +10,14 @@
   "item.sauces.mushroom_paste": "蘑菇酱瓶",
   "item.sauces.black_pepper_sauce": "黑胡椒酱瓶",
   "item.sauces.chilli_sauce": "辣椒酱瓶",
+  "item.sauces.peanut_butter": "花生酱瓶",
+
+  "item.sauces.chilli": "辣椒",
+  "item.sauces.peanut": "花生",
+  "item.sauces.tomato": "番茄",
+  "item.sauces.chilli_seeds": "辣椒种子",
+  "item.sauces.peanut_kernels": "花生仁",
+  "item.sauces.tomato_seeds": "番茄种子",
 
   "item.sauces.sauces.salad_dressing": "酱料: 沙拉酱",
   "item.sauces.sauces.jam": "酱料: 果酱",
@@ -16,13 +26,21 @@
   "item.sauces.sauces.mushroom_paste": "酱料: 蘑菇酱",
   "item.sauces.sauces.black_pepper_sauce": "酱料: 黑胡椒酱",
   "item.sauces.sauces.chilli_sauce": "酱料: 辣椒酱",
+  "item.sauces.sauces.peanut_butter": "酱料: 花生酱",
+  "item.sauces.sauces.ketchup": "酱料:番茄酱",
 
   "block.sauces.plate_block": "木盘",
   "block.sauces.sauce_making_machine_block": "酱料制作机",
 
+  "block.sauces.chilli_crop_block": "辣椒",
+  "block.sauces.peanut_crop_block": "花生",
+  "block.sauces.tomato_crop_block": "番茄",
+
   "subtitles.sauces.spreading": "涂酱中",
+  "subtitles.sauces.working": "烦人的嗡嗡声",
   "subtitles.sauces.work_finished":"叮~",
 
+  "tips.player.plate": "这玩意能吃？",
   "tip.sauces.sauce_making_machine.input_count": "放入数量: %s",
   "tip.sauces.sauce_making_machine.processtime": "处理时间: %s s"
 }
