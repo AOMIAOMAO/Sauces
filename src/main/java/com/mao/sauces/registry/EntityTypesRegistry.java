@@ -4,7 +4,6 @@ import com.mao.sauces.Sauces;
 import com.mao.sauces.block.blockentity.PlateBlockEntity;
 import com.mao.sauces.block.blockentity.SauceMakingMachineBlockEntity;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
-import net.minecraft.block.Block;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -23,7 +22,7 @@ public class EntityTypesRegistry {
             FabricBlockEntityTypeBuilder.create(SauceMakingMachineBlockEntity::new, BlocksRegistry.SAUCE_MAKING_MACHINE_BLOCK).build()
     );
 
-    public static void registerModEntities(){
+    public static void registerModEntities() {
         Sauces.LOGGER.debug("Registering Mod Entities For" + Sauces.MOD_ID);
     }
 }

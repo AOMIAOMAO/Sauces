@@ -15,7 +15,10 @@ public class SaucesClient implements ClientModInitializer {
      */
     @Override
     public void onInitializeClient() {
+        BlockRenderLayerMap.INSTANCE.putBlock(BlocksRegistry.CHILLI_CROP_BLOCK, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BlocksRegistry.SAUCE_MAKING_MACHINE_BLOCK, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlocksRegistry.PEANUT_CROP_BLOCK, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlocksRegistry.TOMATO_CROP_BLOCK, RenderLayer.getCutout());
 
         BlockEntityRendererFactories.register(EntityTypesRegistry.PLATE_BLOCK_ENTITY, PlateBlockEntityRenderer::new);
         BlockEntityRendererFactories.register(EntityTypesRegistry.SAUCE_MAKING_MACHINE_BLOCK_ENTITY, SauceMakingMachineBlockEntityRenderer::new);

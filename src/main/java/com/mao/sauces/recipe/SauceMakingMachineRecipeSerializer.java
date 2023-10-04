@@ -15,7 +15,7 @@ import net.minecraft.util.JsonHelper;
 import static net.minecraft.recipe.ShapedRecipe.outputFromJson;
 
 public class SauceMakingMachineRecipeSerializer implements RecipeSerializer<SauceMakingMachineRecipe> {
-    private SauceMakingMachineRecipeSerializer(){
+    private SauceMakingMachineRecipeSerializer() {
     }
 
     public static final SauceMakingMachineRecipeSerializer INSTANCE = new SauceMakingMachineRecipeSerializer();

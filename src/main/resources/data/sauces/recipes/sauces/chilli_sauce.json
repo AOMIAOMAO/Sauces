@@ -1,0 +1,12 @@
+{
+  "type": "sauces:sauce_making_machine",
+  "ingredient": {
+    "item": "sauces:chilli"
+  },
+  "bottle": {
+    "item": "sauces:empty_sauce_bottle"
+  },
+  "inputCount": 4,
+  "output": "sauces:chilli_sauce",
+  "processtime": 150
+}

@@ -4,7 +4,6 @@ import com.mao.sauces.Sauces;
 import com.mao.sauces.compat.rei.SaucesREIPlugin;
 import com.mao.sauces.compat.rei.display.SMMREIDisplay;
 import com.mao.sauces.registry.BlocksRegistry;
-
 import me.shedaniel.math.Point;
 import me.shedaniel.math.Rectangle;
 import me.shedaniel.rei.api.client.gui.Renderer;
@@ -15,7 +14,6 @@ import me.shedaniel.rei.api.client.gui.widgets.Widgets;
 import me.shedaniel.rei.api.client.registry.display.DisplayCategory;
 import me.shedaniel.rei.api.common.category.CategoryIdentifier;
 import me.shedaniel.rei.api.common.util.EntryStacks;
-
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
@@ -49,7 +47,7 @@ public class SMMREICategory implements DisplayCategory<SMMREIDisplay> {
         widgets.add(Widgets.createRecipeBase(bounds));
         Rectangle bgBounds = centeredIntoRecipeBase(new Point(origin.x, origin.y), 96, 57);
 
-        widgets.add(Widgets.createTexturedWidget(GUI_TEXTURE, new Rectangle(bgBounds.x, bgBounds.y, 96, 57),6, 8));
+        widgets.add(Widgets.createTexturedWidget(GUI_TEXTURE, new Rectangle(bgBounds.x, bgBounds.y, 96, 57), 6, 8));
 
         widgets.add(Widgets.createSlot(new Point(bgBounds.x + 8, bgBounds.y + 2))
                 .entries(display.getInputEntries().get(1)).markInput().disableBackground());

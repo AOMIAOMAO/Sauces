@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "a": {
+      "tag": "minecraft:wooden_slabs"
+    },
+    "m": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    " m ",
+    " a "
+  ],
+  "result": {
+    "item": "sauces:empty_sauce_bottle"
+  },
+  "show_notification": true
+}

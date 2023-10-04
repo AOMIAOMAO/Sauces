@@ -6,15 +6,19 @@ import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventory;
+import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.particle.ItemStackParticleEffect;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
-import net.minecraft.util.ItemScatterer;
+import net.minecraft.state.StateManager;
+import net.minecraft.state.property.DirectionProperty;
+import net.minecraft.state.property.Properties;
+import net.minecraft.text.Text;
+import net.minecraft.util.*;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
@@ -22,8 +26,11 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 public class PlateBlock extends BlockWithEntity {
+    public static final DirectionProperty FACING = Properties.FACING;
+
     public PlateBlock(Settings settings) {
         super(settings);
+        setDefaultState(getDefaultState().with(FACING, Direction.NORTH));
     }
 
     @Override
@@ -33,22 +40,19 @@ public class PlateBlock extends BlockWithEntity {
             ItemStack food = entity.getStack(0);
             ItemStack stack = player.getStackInHand(hand);
 
-            if (food.isEmpty()){
-                if (stack.isFood()) {
-                    entity.setStack(0, stack.split(1));
-                    entity.setItemDirection(player.getHorizontalFacing());
-                    return ActionResult.SUCCESS;
-                }
-            }else {
+            if (food.isEmpty()) {
+                entity.setStack(0, stack.split(1));
+                entity.setItemDirection(player.getHorizontalFacing());
+            } else if (food.isFood()){
                 if (stack.getItem() instanceof SaucesItem sauces && !food.hasNbt()) {
                     sauces.spreadSauces(food, player);
                     spawnItemParticles(world, pos, food, 7);
                     stack.damage(1, player, p -> p.sendToolBreakStatus(hand));
-                }else {
+                } else {
                     player.giveItemStack(food.split(1));
                 }
-                return ActionResult.SUCCESS;
             }
+            return ActionResult.SUCCESS;
         }
         return ActionResult.PASS;
     }
@@ -69,6 +73,27 @@ public class PlateBlock extends BlockWithEntity {
     }
 
     @Override
+    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+        builder.add(FACING);
+    }
+
+    @Nullable
+    @Override
+    public BlockState getPlacementState(ItemPlacementContext ctx) {
+        return this.getDefaultState().with(FACING, ctx.getHorizontalPlayerFacing().getOpposite());
+    }
+
+    @Override
+    public BlockState rotate(BlockState state, BlockRotation rotation) {
+        return state.with(FACING, rotation.rotate(state.get(FACING)));
+    }
+
+    @Override
+    public BlockState mirror(BlockState state, BlockMirror mirror) {
+        return state.rotate(mirror.getRotation(state.get(FACING)));
+    }
+
+    @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         return Block.createCuboidShape(1.0, 0.0, 1.0, 15.0, 1.0, 15.0);
     }
@@ -85,12 +110,12 @@ public class PlateBlock extends BlockWithEntity {
     }
 
     private static void spawnItemParticles(World worldIn, BlockPos pos, ItemStack stack, int count) {
-        for(int i = 0; i < count; ++i) {
-            Vec3d vec3d = new Vec3d(((double)worldIn.getRandom().nextFloat() - 0.5) * 0.1, Math.random() * 0.1 + 0.1, ((double)worldIn.getRandom().nextFloat() - 0.5) * 0.1);
+        for (int i = 0; i < count; ++i) {
+            Vec3d vec3d = new Vec3d(((double) worldIn.getRandom().nextFloat() - 0.5) * 0.1, Math.random() * 0.1 + 0.1, ((double) worldIn.getRandom().nextFloat() - 0.5) * 0.1);
             if (worldIn instanceof ServerWorld serverWorld) {
-                serverWorld.spawnParticles(new ItemStackParticleEffect(ParticleTypes.ITEM, stack), (float)pos.getX() + 0.5F, (float)pos.getY() + 0.1F, (float)pos.getZ() + 0.5F, 1, vec3d.x, vec3d.y + 0.05, vec3d.z, 0.0);
+                serverWorld.spawnParticles(new ItemStackParticleEffect(ParticleTypes.ITEM, stack), (float) pos.getX() + 0.5F, (float) pos.getY() + 0.1F, (float) pos.getZ() + 0.5F, 1, vec3d.x, vec3d.y + 0.05, vec3d.z, 0.0);
             } else {
-                worldIn.addParticle(new ItemStackParticleEffect(ParticleTypes.ITEM, stack), (float)pos.getX() + 0.5F, (float)pos.getY() + 0.1F, (float)pos.getZ() + 0.5F, vec3d.x, vec3d.y + 0.05, vec3d.z);
+                worldIn.addParticle(new ItemStackParticleEffect(ParticleTypes.ITEM, stack), (float) pos.getX() + 0.5F, (float) pos.getY() + 0.1F, (float) pos.getZ() + 0.5F, vec3d.x, vec3d.y + 0.05, vec3d.z);
             }
         }
     }

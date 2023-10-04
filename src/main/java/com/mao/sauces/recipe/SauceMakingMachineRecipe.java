@@ -89,7 +89,9 @@ public class SauceMakingMachineRecipe implements Recipe<SauceMakingMachineBlockE
     }
 
     public static class Type implements RecipeType<SauceMakingMachineRecipe> {
-        private Type() {}
+        private Type() {
+        }
+
         public static final Type INSTANCE = new Type();
     }
 }

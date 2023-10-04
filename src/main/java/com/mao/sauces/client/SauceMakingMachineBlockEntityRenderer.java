@@ -12,9 +12,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.RotationAxis;
 
-
 public class SauceMakingMachineBlockEntityRenderer implements BlockEntityRenderer<SauceMakingMachineBlockEntity> {
-    public SauceMakingMachineBlockEntityRenderer(BlockEntityRendererFactory.Context context){}
+    public SauceMakingMachineBlockEntityRenderer(BlockEntityRendererFactory.Context context) {
+    }
 
     @Override
     public void render(SauceMakingMachineBlockEntity entity, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay) {
@@ -26,13 +26,16 @@ public class SauceMakingMachineBlockEntityRenderer implements BlockEntityRendere
 
         if (!stack.isEmpty()) {
             int itemRenderCount = this.getModelCount(stack);
-            for(int i = 0; i < itemRenderCount; ++i) {
+            for (int i = 0; i < itemRenderCount; ++i) {
                 matrices.push();
 
-                matrices.translate(0.5, 0.275 + 0.03 * (double)(i + 1), 0.5);
+                matrices.translate(0.5, 0.275 + 0.03 * (double) (i + 1), 0.5);
                 float f = -direction.asRotation();
                 matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(f));
                 matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(90.0f));
+                if (entity.isProcessing()) {
+                    matrices.multiply(RotationAxis.POSITIVE_Z.rotationDegrees((entity.getProcessTime() + tickDelta) * 150));
+                }
                 matrices.scale(0.3f, 0.3f, 0.3f);
 
                 itemRenderer.renderItem(stack, ModelTransformationMode.FIXED, light, overlay, matrices, vertexConsumers, entity.getWorld(), renderPos);
@@ -51,9 +54,9 @@ public class SauceMakingMachineBlockEntityRenderer implements BlockEntityRendere
             return 8;
         } else if (stack.getCount() >= 6) {
             return 6;
-        } else if (stack.getCount() >= 2){
-            return 2;
-        }else {
+        } else if (stack.getCount() >= 2) {
+            return 3;
+        } else {
             return 1;
         }
     }

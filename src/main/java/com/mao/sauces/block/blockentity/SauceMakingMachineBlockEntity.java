@@ -26,6 +26,7 @@ public class SauceMakingMachineBlockEntity extends BlockEntity implements BlockE
     public final RecipeType<SauceMakingMachineRecipe> recipeType = SauceMakingMachineRecipe.Type.INSTANCE;
     private int processTimeTotal;
     protected int processTime;
+    protected boolean isProcessing = false;
     private Direction itemDirection = Direction.NORTH;
     private final DefaultedList<ItemStack> items = DefaultedList.ofSize(1, ItemStack.EMPTY);
     private final DefaultedList<ItemStack> bottle = DefaultedList.ofSize(1, ItemStack.EMPTY);
@@ -34,19 +35,27 @@ public class SauceMakingMachineBlockEntity extends BlockEntity implements BlockE
         super(EntityTypesRegistry.SAUCE_MAKING_MACHINE_BLOCK_ENTITY, pos, state);
     }
 
-    public Direction getItemDirection(){
+    public Direction getItemDirection() {
         return itemDirection;
+    }
+
+    public boolean isProcessing() {
+        return isProcessing;
+    }
+
+    public int getProcessTime() {
+        return processTime;
     }
 
     public void setItemDirection(Direction itemDirection) {
         this.itemDirection = itemDirection;
     }
 
-    public ItemStack getBottleItem(){
+    public ItemStack getBottleItem() {
         return bottle.get(0);
     }
 
-    public void setBottleItem(ItemStack stack){
+    public void setBottleItem(ItemStack stack) {
         bottle.set(0, stack);
     }
 
@@ -57,11 +66,13 @@ public class SauceMakingMachineBlockEntity extends BlockEntity implements BlockE
             if (optional.isPresent()) {
                 SauceMakingMachineRecipe recipe = optional.get();
                 entity.processTimeTotal = recipe.getProcesstime();
+                entity.isProcessing = true;
                 entity.processTime++;
                 spawnItemParticles(world, pos, stack, 5);
 
                 if (entity.processTime == entity.processTimeTotal) {
                     entity.processTime = 0;
+                    entity.isProcessing = false;
                     ItemStack output = recipe.craft(entity, world.getRegistryManager());
                     ItemScatterer.spawn(world, pos.getX(), pos.getY(), pos.getZ(), entity.getStack(0).getRecipeRemainder());
                     entity.setBottleItem(output);
@@ -85,6 +96,7 @@ public class SauceMakingMachineBlockEntity extends BlockEntity implements BlockE
         nbt.putInt("ProcessTimeTotal", this.processTimeTotal);
         nbt.putInt("ProcessTime", this.processTime);
         nbt.putString("ItemDirection", this.itemDirection.name());
+        nbt.putBoolean("isProcessing", this.isProcessing);
     }
 
     @Override
@@ -94,16 +106,17 @@ public class SauceMakingMachineBlockEntity extends BlockEntity implements BlockE
         Inventories.readNbt(nbt, items);
         this.processTimeTotal = nbt.getInt("ProcessTimeTotal");
         this.processTime = nbt.getInt("ProcessTime");
+        this.isProcessing = nbt.getBoolean("isProcessing");
         this.itemDirection = Direction.valueOf(nbt.getString("ItemDirection"));
     }
 
     public static void spawnItemParticles(World worldIn, BlockPos pos, ItemStack stack, int count) {
-        for(int i = 0; i < count; ++i) {
-            Vec3d vec3d = new Vec3d(((double)worldIn.getRandom().nextFloat() - 0.5) * 0.1, Math.random() * 0.1 + 0.1, ((double)worldIn.getRandom().nextFloat() - 0.5) * 0.1);
+        for (int i = 0; i < count; ++i) {
+            Vec3d vec3d = new Vec3d(((double) worldIn.getRandom().nextFloat() - 0.5) * 0.1, Math.random() * 0.1 + 0.1, ((double) worldIn.getRandom().nextFloat() - 0.5) * 0.1);
             if (worldIn instanceof ServerWorld serverWorld) {
-                serverWorld.spawnParticles(new ItemStackParticleEffect(ParticleTypes.ITEM, stack), (float)pos.getX() + 0.5F, (float)pos.getY() + 0.1F, (float)pos.getZ() + 0.5F, 1, vec3d.x, vec3d.y + 0.05, vec3d.z, 0.0);
+                serverWorld.spawnParticles(new ItemStackParticleEffect(ParticleTypes.ITEM, stack), (float) pos.getX() + 0.5F, (float) pos.getY() + 0.1F, (float) pos.getZ() + 0.5F, 1, vec3d.x, vec3d.y + 0.05, vec3d.z, 0.0);
             } else {
-                worldIn.addParticle(new ItemStackParticleEffect(ParticleTypes.ITEM, stack), (float)pos.getX() + 0.5F, (float)pos.getY() + 0.1F, (float)pos.getZ() + 0.5F, vec3d.x, vec3d.y + 0.05, vec3d.z);
+                worldIn.addParticle(new ItemStackParticleEffect(ParticleTypes.ITEM, stack), (float) pos.getX() + 0.5F, (float) pos.getY() + 0.1F, (float) pos.getZ() + 0.5F, vec3d.x, vec3d.y + 0.05, vec3d.z);
             }
         }
     }

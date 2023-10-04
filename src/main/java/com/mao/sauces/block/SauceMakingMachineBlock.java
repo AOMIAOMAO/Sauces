@@ -40,18 +40,21 @@ public class SauceMakingMachineBlock extends BlockWithEntity {
             ItemStack itemStack1 = entity.getBottleItem();
             ItemStack stack = player.getStackInHand(hand);
 
-            if (hit.getSide() != Direction.UP){
-                if (itemStack.isEmpty()) {
-                    entity.setStack(0, stack.split(stack.getCount()));
-                    entity.setItemDirection(player.getHorizontalFacing());
-                } else if (!player.getInventory().insertStack(itemStack.split(itemStack.getCount()))) {
-                    player.dropItem(itemStack.split(itemStack.getCount()), false);
-                }
-            }else{
-                if (itemStack1.isEmpty()){
-                    entity.setBottleItem(stack.split(1));
-                }else if (!player.getInventory().insertStack(itemStack1.split(1))) {
-                    player.dropItem(itemStack1.split(1), false);
+            if (!entity.isProcessing()) {
+                if (hit.getSide() != Direction.UP) {
+                    if (itemStack.isEmpty()) {
+                        entity.setStack(0, stack.split(stack.getCount()));
+                        entity.setItemDirection(player.getHorizontalFacing());
+                    } else if (!player.getInventory().insertStack(itemStack.split(itemStack.getCount()))) {
+                        player.dropItem(itemStack.split(itemStack.getCount()), false);
+                    }
+                } else {
+                    if (itemStack1.isEmpty()) {
+                        entity.setBottleItem(stack.split(1));
+                        entity.setItemDirection(player.getHorizontalFacing());
+                    } else if (!player.getInventory().insertStack(itemStack1.split(1))) {
+                        player.dropItem(itemStack1.split(1), false);
+                    }
                 }
             }
             return ActionResult.SUCCESS;
@@ -67,10 +70,10 @@ public class SauceMakingMachineBlock extends BlockWithEntity {
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         Direction dir = state.get(FACING);
-        switch (dir){
+        switch (dir) {
             case WEST -> {
                 VoxelShape voxelShape = Block.createCuboidShape(3, 0, 1, 15, 2, 15);
-                VoxelShape voxelShape1= Block.createCuboidShape(4, 2, 3, 14, 4, 13);
+                VoxelShape voxelShape1 = Block.createCuboidShape(4, 2, 3, 14, 4, 13);
                 VoxelShape voxelShape2 = Block.createCuboidShape(6, 4, 5, 12, 16, 11);
                 return VoxelShapes.union(voxelShape, voxelShape1, voxelShape2);
             }
@@ -81,14 +84,14 @@ public class SauceMakingMachineBlock extends BlockWithEntity {
                 return VoxelShapes.union(voxelShape, voxelShape1, voxelShape2);
             }
             case SOUTH -> {
-                VoxelShape voxelShape = Block.createCuboidShape(1, 0, 1, 15, 2,13);
-                VoxelShape voxelShape1 = Block.createCuboidShape(3, 2, 2, 13, 4,12);
-                VoxelShape voxelShape2 = Block.createCuboidShape(5, 4,4,11,16,10);
+                VoxelShape voxelShape = Block.createCuboidShape(1, 0, 1, 15, 2, 13);
+                VoxelShape voxelShape1 = Block.createCuboidShape(3, 2, 2, 13, 4, 12);
+                VoxelShape voxelShape2 = Block.createCuboidShape(5, 4, 4, 11, 16, 10);
                 return VoxelShapes.union(voxelShape, voxelShape1, voxelShape2);
             }
             case NORTH -> {
                 VoxelShape voxelShape = Block.createCuboidShape(1, 0, 3, 15, 2, 15);
-                VoxelShape voxelShape1 = Block.createCuboidShape(3,2,4,13,4,14);
+                VoxelShape voxelShape1 = Block.createCuboidShape(3, 2, 4, 13, 4, 14);
                 VoxelShape voxelShape2 = Block.createCuboidShape(5, 4, 6, 11, 16, 12);
                 return VoxelShapes.union(voxelShape, voxelShape1, voxelShape2);
             }

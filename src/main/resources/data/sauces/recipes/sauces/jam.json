@@ -4,7 +4,7 @@
     "tag": "sauces:fruit"
   },
   "bottle": {
-    "item": "minecraft:glass_bottle"
+    "item": "sauces:empty_sauce_bottle"
   },
   "inputCount": 3,
   "output": "sauces:jam",
