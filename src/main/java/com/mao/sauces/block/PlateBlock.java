@@ -35,7 +35,7 @@ public class PlateBlock extends BlockWithEntity {
 
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        BlockEntity blockEntity = world.getBlockEntity(pos);
+       BlockEntity blockEntity = world.getBlockEntity(pos);
         if (blockEntity instanceof PlateBlockEntity entity) {
             ItemStack food = entity.getStack(0);
             ItemStack stack = player.getStackInHand(hand);
@@ -51,6 +51,8 @@ public class PlateBlock extends BlockWithEntity {
                 } else {
                     player.giveItemStack(food.split(1));
                 }
+            }else {
+                player.giveItemStack(food.split(1));
             }
             return ActionResult.SUCCESS;
         }
