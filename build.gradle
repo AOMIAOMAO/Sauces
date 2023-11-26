@@ -10,6 +10,10 @@ group = project.maven_group
 
 repositories {
     maven { url "https://maven.shedaniel.me/" }
+    maven {
+        name = "Curse Forge"
+        url = "https://www.cursemaven.com"
+    }
 }
 
 dependencies {

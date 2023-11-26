@@ -12,13 +12,6 @@
   "item.sauces.chilli_sauce": "辣椒酱瓶",
   "item.sauces.peanut_butter": "花生酱瓶",
 
-  "item.sauces.chilli": "辣椒",
-  "item.sauces.peanut": "花生",
-  "item.sauces.tomato": "番茄",
-  "item.sauces.chilli_seeds": "辣椒种子",
-  "item.sauces.peanut_kernels": "花生仁",
-  "item.sauces.tomato_seeds": "番茄种子",
-
   "item.sauces.sauces.salad_dressing": "酱料: 沙拉酱",
   "item.sauces.sauces.jam": "酱料: 果酱",
   "item.sauces.sauces.chocolate_sauce": "酱料: 巧克力酱",
@@ -32,9 +25,7 @@
   "block.sauces.plate_block": "木盘",
   "block.sauces.sauce_making_machine_block": "酱料制作机",
 
-  "block.sauces.chilli_crop_block": "辣椒",
-  "block.sauces.peanut_crop_block": "花生",
-  "block.sauces.tomato_crop_block": "番茄",
+  "entity.minecraft.villager.sauce_chef": "酱料师",
 
   "subtitles.sauces.spreading": "涂酱中",
   "subtitles.sauces.working": "烦人的嗡嗡声",

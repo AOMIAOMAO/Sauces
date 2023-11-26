@@ -19,6 +19,7 @@ public class Sauces implements ModInitializer {
         EntityTypesRegistry.registerModEntities();
         SoundsRegistry.registerModSounds();
         RecipesRegistry.registerModRecipes();
+        VillagersRegistry.registerVillagers();
         VillageTradesRegistry.registerModTrades();
 
         UseBlockCallback.EVENT.register(new UseOnBlockEvent());

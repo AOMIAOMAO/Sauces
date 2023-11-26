@@ -1,5 +1,7 @@
 package com.mao.sauces.event;
 
+import com.mao.sauces.item.SaucesItem;
+import com.mao.sauces.registry.ItemsRegistry;
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
@@ -22,6 +24,10 @@ public class UseOnBlockEvent implements UseBlockCallback {
             if (stack.isFood() && stack.hasNbt() && !(stack.getItem() instanceof SuspiciousStewItem)) {
                 world.playSound(player.getX(), player.getY(), player.getZ(), SoundEvents.AMBIENT_UNDERWATER_EXIT, SoundCategory.PLAYERS, 1.0f, 1.0f, true);
                 stack.setNbt(null);
+                return ActionResult.SUCCESS;
+            } else if (stack.getItem() instanceof SaucesItem) {
+                world.playSound(player.getX(), player.getY(), player.getZ(), SoundEvents.AMBIENT_UNDERWATER_EXIT, SoundCategory.PLAYERS, 1.0f, 1.0f, true);
+                player.setStackInHand(hand, ItemsRegistry.EMPTY_SAUCE_BOTTLE.getDefaultStack());
                 return ActionResult.SUCCESS;
             }
         }

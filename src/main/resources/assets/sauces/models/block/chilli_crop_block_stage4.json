@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cross",
-  "textures": {
-    "cross": "sauces:block/chilli_crop_block_stage4"
-  }
-}

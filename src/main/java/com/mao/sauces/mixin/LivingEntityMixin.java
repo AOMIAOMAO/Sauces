@@ -34,17 +34,15 @@ public class LivingEntityMixin {
                     case "chocolate_sauce" ->
                             targetEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, randomDuration, randomAmplifier));
                     case "cream" ->
-                            targetEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.JUMP_BOOST, randomDuration, randomAmplifier));
-                    case "mushroom_paste" ->
-                            targetEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.LUCK, randomDuration, randomAmplifier));
+                            targetEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.JUMP_BOOST, randomDuration, 1));
+                    case "mushroom_paste" -> targetEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, randomDuration, randomAmplifier));
                     case "black_pepper_sauce" ->
                             targetEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, randomDuration, randomAmplifier));
                     case "chilli_sauce" ->
                             targetEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.HASTE, randomDuration, randomAmplifier));
                     case "peanut_butter" ->
                             targetEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, randomDuration, randomAmplifier));
-                    case "ketchup" ->
-                            targetEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.SATURATION, 20 * 10, 0));
+                    case "ketchup" -> targetEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.SATURATION, 20 * 25, 0));
                 }
             }
         }

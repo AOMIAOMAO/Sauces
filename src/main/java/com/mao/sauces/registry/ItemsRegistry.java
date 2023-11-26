@@ -3,7 +3,6 @@ package com.mao.sauces.registry;
 import com.mao.sauces.Sauces;
 import com.mao.sauces.item.SaucesItem;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.item.AliasedBlockItem;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -13,13 +12,6 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.util.Identifier;
 
 public class ItemsRegistry {
-    public static final Item CHILLI_SEEDS = registerItems("chilli_seeds", new AliasedBlockItem(BlocksRegistry.CHILLI_CROP_BLOCK, new Item.Settings()), ItemGroupsRegistry.ITEM_GROUP);
-    public static final Item TOMATO_SEEDS = registerItems("tomato_seeds", new AliasedBlockItem(BlocksRegistry.TOMATO_CROP_BLOCK, new Item.Settings()), ItemGroupsRegistry.ITEM_GROUP);
-    public static final Item TOMATO = registerItems("tomato", new Item(new Item.Settings()), ItemGroupsRegistry.ITEM_GROUP);
-    public static final Item CHILLI = registerItems("chilli", new Item(new Item.Settings()), ItemGroupsRegistry.ITEM_GROUP);
-    public static final Item PEANUT = registerItems("peanut", new Item(new Item.Settings()), ItemGroupsRegistry.ITEM_GROUP);
-    public static final Item PEANUT_KERNELS = registerItems("peanut_kernels", new AliasedBlockItem(BlocksRegistry.PEANUT_CROP_BLOCK, new Item.Settings()), ItemGroupsRegistry.ITEM_GROUP);
-
     public static final Item PLATE = registerItems("plate", new BlockItem(BlocksRegistry.PLATE_BLOCK, new Item.Settings().maxCount(1)), ItemGroupsRegistry.ITEM_GROUP);
     public static final Item SAUCE_MAKING_MACHINE = registerItems("sauce_making_machine", new BlockItem(BlocksRegistry.SAUCE_MAKING_MACHINE_BLOCK, new Item.Settings()), ItemGroupsRegistry.ITEM_GROUP);
 

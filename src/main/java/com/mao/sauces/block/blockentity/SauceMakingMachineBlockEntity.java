@@ -8,6 +8,9 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.inventory.Inventories;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.network.listener.ClientPlayPacketListener;
+import net.minecraft.network.packet.Packet;
+import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
 import net.minecraft.particle.ItemStackParticleEffect;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.recipe.RecipeType;
@@ -19,6 +22,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 
@@ -63,7 +67,6 @@ public class SauceMakingMachineBlockEntity extends BlockEntity implements BlockE
         ItemStack stack = entity.getItems().get(0);
         if (!stack.isEmpty()) {
             Optional<SauceMakingMachineRecipe> optional = world.getRecipeManager().getFirstMatch(entity.recipeType, entity, world);
-            if (optional.isPresent()) {
                 SauceMakingMachineRecipe recipe = optional.get();
                 entity.processTimeTotal = recipe.getProcesstime();
                 entity.isProcessing = true;
@@ -79,13 +82,22 @@ public class SauceMakingMachineBlockEntity extends BlockEntity implements BlockE
                     world.playSound(pos.getX(), pos.getY(), pos.getZ(), SoundsRegistry.WORK_FINISHED, SoundCategory.BLOCKS, 1.0f, 1.0f, true);
                     entity.setStack(0, ItemStack.EMPTY);
                 }
-            }
         }
     }
 
     @Override
     public DefaultedList<ItemStack> getItems() {
         return items;
+    }
+
+    @Override
+    public @Nullable Packet<ClientPlayPacketListener> toUpdatePacket() {
+        return BlockEntityUpdateS2CPacket.create(this);
+    }
+
+    @Override
+    public NbtCompound toInitialChunkDataNbt() {
+        return this.createNbt();
     }
 
     @Override

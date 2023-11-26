@@ -1,7 +1,7 @@
 {
   "type": "sauces:sauce_making_machine",
   "ingredient": {
-    "item": "sauces:tomato"
+    "item": "farmersdelight:tomato"
   },
   "bottle": {
     "item": "sauces:empty_sauce_bottle"

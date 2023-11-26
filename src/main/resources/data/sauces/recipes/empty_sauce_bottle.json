@@ -2,16 +2,13 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "a": {
-      "tag": "minecraft:wooden_slabs"
-    },
     "m": {
-      "item": "minecraft:stick"
+      "item": "minecraft:glass"
     }
   },
   "pattern": [
-    " m ",
-    " a "
+    "m",
+    "m"
   ],
   "result": {
     "item": "sauces:empty_sauce_bottle"

@@ -14,7 +14,6 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.Properties;
-import net.minecraft.text.Text;
 import net.minecraft.util.*;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
@@ -48,7 +47,7 @@ public class PlateBlock extends BlockWithEntity {
                     sauces.spreadSauces(food, player);
                     spawnItemParticles(world, pos, food, 7);
                     stack.damage(1, player, p -> p.sendToolBreakStatus(hand));
-                } else {
+                }else {
                     player.giveItemStack(food.split(1));
                 }
             }else {

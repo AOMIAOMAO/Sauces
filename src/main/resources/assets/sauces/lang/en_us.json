@@ -12,13 +12,6 @@
   "item.sauces.chilli_sauce": "Chilli Sauce Bottle",
   "item.sauces.peanut_butter": "Peanut Butter Bottle",
 
-  "item.sauces.chilli": "Chilli",
-  "item.sauces.peanut": "Peanut",
-  "item.sauces.tomato": "Tomato",
-  "item.sauces.chilli_seeds": "Chilli Seeds",
-  "item.sauces.peanut_kernels": "Peanut Kernels",
-  "item.sauces.tomato_seeds": "Tomato Seeds",
-
   "item.sauces.sauces.salad_dressing": "Sauces:Salad Dressing",
   "item.sauces.sauces.jam": "Sauces:Jam",
   "item.sauces.sauces.chocolate_sauce": "Sauces:Chocolate Sauce",
@@ -32,9 +25,7 @@
   "block.sauces.plate_block": "Plate",
   "block.sauces.sauce_making_machine_block": "Sauce Making Machine",
 
-  "block.sauces.chilli_crop_block": "Chilli Crop",
-  "block.sauces.peanut_crop_block": "Peanut Crop",
-  "block.sauces.tomato_crop_block": "Tomato Crop",
+  "entity.minecraft.villager.sauce_chef": "Sauce Chef",
 
   "subtitles.sauces.spreading": "Spreading",
   "subtitles.sauces.working": "Working",
