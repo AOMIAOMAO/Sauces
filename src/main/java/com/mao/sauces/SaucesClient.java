@@ -10,9 +10,6 @@ import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 
 public class SaucesClient implements ClientModInitializer {
-    /**
-     * Runs the mod initializer on the client environment.
-     */
     @Override
     public void onInitializeClient() {
         BlockRenderLayerMap.INSTANCE.putBlock(BlocksRegistry.SAUCE_MAKING_MACHINE_BLOCK, RenderLayer.getTranslucent());

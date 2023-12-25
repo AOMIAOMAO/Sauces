@@ -3,10 +3,7 @@
   "ingredient": {
     "tag": "sauces:mushrooms"
   },
-  "bottle": {
-    "item": "sauces:empty_sauce_bottle"
-  },
   "inputCount": 4,
-  "output": "sauces:mushroom_paste",
+  "result": "sauces:mushroom_paste",
   "processtime": 150
 }

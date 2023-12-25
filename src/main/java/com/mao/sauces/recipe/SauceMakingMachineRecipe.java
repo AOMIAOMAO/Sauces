@@ -13,19 +13,25 @@ import net.minecraft.world.World;
 
 public class SauceMakingMachineRecipe implements Recipe<SauceMakingMachineBlockEntity> {
     protected final Ingredient ingredient;
-    protected final Ingredient bottle;
+    protected final ItemStack bottle;
     protected final ItemStack output;
     protected final Identifier id;
     protected final int processtime;
     protected final int inputCount;
 
-    public SauceMakingMachineRecipe(Ingredient ingredient, Ingredient bottle, ItemStack output, Identifier id, int processtime, int inputCount) {
+    public SauceMakingMachineRecipe(Ingredient ingredient, ItemStack bottle, ItemStack output, Identifier id, int processtime, int inputCount) {
         this.ingredient = ingredient;
-        this.bottle = bottle;
         this.output = output;
         this.id = id;
         this.processtime = processtime;
         this.inputCount = inputCount;
+        if (!bottle.isEmpty()) {
+            this.bottle = bottle;
+        } else if (output.getItem().getRecipeRemainder() != null) {
+            this.bottle = new ItemStack(output.getItem().getRecipeRemainder());
+        } else {
+            this.bottle = ItemStack.EMPTY;
+        }
     }
 
     public int getProcesstime() {
@@ -40,9 +46,13 @@ public class SauceMakingMachineRecipe implements Recipe<SauceMakingMachineBlockE
         return inputCount;
     }
 
+    public ItemStack getBottle() {
+        return bottle;
+    }
+
     @Override
     public boolean matches(SauceMakingMachineBlockEntity inventory, World world) {
-        return this.ingredient.test(inventory.getStack(0)) && this.bottle.test(inventory.getBottleItem()) && inventory.getStack(0).getCount() == inputCount;
+        return this.ingredient.test(inventory.getStack(0)) && bottle.isOf(inventory.getBottleItem().getItem()) && inventory.getStack(0).getCount() == inputCount;
     }
 
     @Override
@@ -69,7 +79,6 @@ public class SauceMakingMachineRecipe implements Recipe<SauceMakingMachineBlockE
     public DefaultedList<Ingredient> getIngredients() {
         DefaultedList<Ingredient> list = DefaultedList.of();
         list.add(this.ingredient);
-        list.add(this.bottle);
         return list;
     }
 

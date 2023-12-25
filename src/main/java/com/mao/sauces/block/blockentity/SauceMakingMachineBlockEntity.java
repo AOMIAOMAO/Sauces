@@ -67,6 +67,7 @@ public class SauceMakingMachineBlockEntity extends BlockEntity implements BlockE
         ItemStack stack = entity.getItems().get(0);
         if (!stack.isEmpty()) {
             Optional<SauceMakingMachineRecipe> optional = world.getRecipeManager().getFirstMatch(entity.recipeType, entity, world);
+            if (optional.isPresent()){
                 SauceMakingMachineRecipe recipe = optional.get();
                 entity.processTimeTotal = recipe.getProcesstime();
                 entity.isProcessing = true;
@@ -82,6 +83,7 @@ public class SauceMakingMachineBlockEntity extends BlockEntity implements BlockE
                     world.playSound(pos.getX(), pos.getY(), pos.getZ(), SoundsRegistry.WORK_FINISHED, SoundCategory.BLOCKS, 1.0f, 1.0f, true);
                     entity.setStack(0, ItemStack.EMPTY);
                 }
+            }
         }
     }
 

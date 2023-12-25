@@ -3,10 +3,7 @@
   "ingredient": {
     "item": "minecraft:egg"
   },
-  "bottle": {
-    "item": "sauces:empty_sauce_bottle"
-  },
   "inputCount": 2,
-  "output": "sauces:salad_dressing",
+  "result": "sauces:salad_dressing",
   "processtime": 150
 }

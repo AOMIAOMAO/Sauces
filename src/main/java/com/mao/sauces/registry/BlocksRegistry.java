@@ -5,6 +5,7 @@ import com.mao.sauces.block.PlateBlock;
 import com.mao.sauces.block.SauceMakingMachineBlock;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;

@@ -24,10 +24,9 @@ public class SauceMakingMachineRecipeSerializer implements RecipeSerializer<Sauc
     @Override
     public SauceMakingMachineRecipe read(Identifier id, JsonObject json) {
         Ingredient ingredient = Ingredient.fromJson(JsonHelper.getObject(json, "ingredient"));
-        Ingredient bottle = Ingredient.fromJson(JsonHelper.getObject(json, "bottle"));
 
         ItemStack output;
-        JsonElement element = json.get("output");
+        JsonElement element = json.get("result");
         if (element.isJsonObject())
             output = outputFromJson((JsonObject) element);
         else {
@@ -36,16 +35,22 @@ public class SauceMakingMachineRecipeSerializer implements RecipeSerializer<Sauc
             output = new ItemStack(item);
         }
 
+        ItemStack container = ItemStack.EMPTY;
+        if (JsonHelper.hasElement(json, "container")) {
+            JsonObject jsonContainer = JsonHelper.getObject(json, "container");
+            container = new ItemStack(JsonHelper.getItem(jsonContainer, "item"), JsonHelper.getInt(jsonContainer, "count", 1));
+        }
+
         int processtime = json.get("processtime").getAsInt();
         int inputCount = json.get("inputCount").getAsInt();
 
-        return new SauceMakingMachineRecipe(ingredient, bottle, output, id, processtime, inputCount);
+        return new SauceMakingMachineRecipe(ingredient, container, output, id, processtime, inputCount);
     }
 
     @Override
     public SauceMakingMachineRecipe read(Identifier id, PacketByteBuf buf) {
         Ingredient ingredient = Ingredient.fromPacket(buf);
-        Ingredient bottle = Ingredient.fromPacket(buf);
+        ItemStack bottle = buf.readItemStack();
         ItemStack output = buf.readItemStack();
         int processtime = buf.readInt();
         int inputCount = buf.readInt();
@@ -56,8 +61,8 @@ public class SauceMakingMachineRecipeSerializer implements RecipeSerializer<Sauc
     @Override
     public void write(PacketByteBuf buf, SauceMakingMachineRecipe recipe) {
         recipe.ingredient.write(buf);
-        recipe.bottle.write(buf);
-        buf.writeItemStack(recipe.output);
+        buf.writeItemStack(recipe.getBottle());
+        buf.writeItemStack(recipe.getOutput(null));
         buf.writeInt(recipe.getProcesstime());
         buf.writeInt(recipe.getInputCount());
     }

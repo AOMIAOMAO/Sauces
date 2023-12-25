@@ -27,7 +27,7 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 public class SauceMakingMachineBlock extends BlockWithEntity {
-    public static final DirectionProperty FACING = Properties.FACING;
+    public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
 
     public SauceMakingMachineBlock(Settings settings) {
         super(settings);

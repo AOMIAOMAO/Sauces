@@ -1,10 +1,10 @@
 package com.mao.sauces.item;
 
+import com.mao.sauces.registry.ItemsRegistry;
 import com.mao.sauces.registry.SoundsRegistry;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.math.MathHelper;
@@ -14,7 +14,7 @@ public class SaucesItem extends Item {
     private final String sauces;
 
     public SaucesItem(String sauces) {
-        super(new Item.Settings().maxDamage(25).recipeRemainder(Items.GLASS_BOTTLE));
+        super(new Item.Settings().maxDamage(25).recipeRemainder(ItemsRegistry.EMPTY_SAUCE_BOTTLE));
         this.sauces = sauces;
     }
 

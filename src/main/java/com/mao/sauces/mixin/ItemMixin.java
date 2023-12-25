@@ -23,12 +23,12 @@ public class ItemMixin {
     private void appendTooltipForFood(ItemStack stack, World world, List<Text> tooltip, TooltipContext context, CallbackInfo ci) {
         if (stack.isFood() && stack.hasNbt() && !(stack.getItem() instanceof SuspiciousStewItem)) {
             String sauces = SaucesItem.getSauces(stack);
-            tooltip.add(Text.translatable("item.sauces.sauces" + "." + sauces).formatted(Formatting.BLUE));
+            tooltip.add(Text.translatable("item.sauces.sauces." + sauces).formatted(Formatting.BLUE));
         }
     }
 
     @Inject(method = "hasGlint", at = @At("RETURN"), cancellable = true)
     private void setGlintForFood(ItemStack stack, CallbackInfoReturnable<Boolean> cir) {
-        cir.setReturnValue(stack.isFood() && stack.hasNbt() && !(stack.getItem() instanceof SuspiciousStewItem));
+        cir.setReturnValue(stack.isFood() && stack.hasNbt() && !(stack.getItem() instanceof SuspiciousStewItem) || stack.hasEnchantments());
     }
 }

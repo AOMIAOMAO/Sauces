@@ -3,10 +3,7 @@
   "ingredient": {
     "item": "minecraft:milk_bucket"
   },
-  "bottle": {
-    "item": "sauces:empty_sauce_bottle"
-  },
   "inputCount": 1,
-  "output": "sauces:cream",
+  "result": "sauces:cream",
   "processtime": 150
 }

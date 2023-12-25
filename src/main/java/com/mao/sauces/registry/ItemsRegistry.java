@@ -12,8 +12,8 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.util.Identifier;
 
 public class ItemsRegistry {
-    public static final Item PLATE = registerItems("plate", new BlockItem(BlocksRegistry.PLATE_BLOCK, new Item.Settings().maxCount(1)), ItemGroupsRegistry.ITEM_GROUP);
     public static final Item SAUCE_MAKING_MACHINE = registerItems("sauce_making_machine", new BlockItem(BlocksRegistry.SAUCE_MAKING_MACHINE_BLOCK, new Item.Settings()), ItemGroupsRegistry.ITEM_GROUP);
+    public static final Item PLATE = registerItems("plate", new BlockItem(BlocksRegistry.PLATE_BLOCK, new Item.Settings().maxCount(1)), ItemGroupsRegistry.ITEM_GROUP);
 
     public static final Item EMPTY_SAUCE_BOTTLE = registerItems("empty_sauce_bottle", new Item(new Item.Settings().maxCount(32)), ItemGroupsRegistry.ITEM_GROUP);
     public static final SaucesItem SALAD_DRESSING = (SaucesItem) registerItems("salad_dressing", new SaucesItem("salad_dressing"), ItemGroupsRegistry.ITEM_GROUP);

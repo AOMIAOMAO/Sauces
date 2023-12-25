@@ -3,10 +3,7 @@
   "ingredient": {
     "tag": "sauces:fruit"
   },
-  "bottle": {
-    "item": "sauces:empty_sauce_bottle"
-  },
   "inputCount": 3,
-  "output": "sauces:jam",
+  "result": "sauces:jam",
   "processtime": 150
 }
