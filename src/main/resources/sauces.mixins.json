@@ -4,6 +4,7 @@
   "package": "com.mao.sauces.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "CuttingBoardBlockMixin",
     "ItemMixin",
     "LivingEntityMixin"
   ],

@@ -110,7 +110,7 @@ public class PlateBlock extends BlockWithEntity {
         return new PlateBlockEntity(pos, state);
     }
 
-    private static void spawnItemParticles(World worldIn, BlockPos pos, ItemStack stack, int count) {
+    public static void spawnItemParticles(World worldIn, BlockPos pos, ItemStack stack, int count) {
         for (int i = 0; i < count; ++i) {
             Vec3d vec3d = new Vec3d(((double) worldIn.getRandom().nextFloat() - 0.5) * 0.1, Math.random() * 0.1 + 0.1, ((double) worldIn.getRandom().nextFloat() - 0.5) * 0.1);
             if (worldIn instanceof ServerWorld serverWorld) {

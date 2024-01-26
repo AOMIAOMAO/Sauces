@@ -9,10 +9,12 @@ version = project.mod_version
 group = project.maven_group
 
 repositories {
-    maven { url "https://maven.shedaniel.me/" }
     maven {
-        name = "Curse Forge"
-        url = "https://www.cursemaven.com"
+        url "https://maven.shedaniel.me/"
+    }
+    maven {
+        name = "Modrinth"
+        url = "https://api.modrinth.com/maven"
     }
 }
 
@@ -24,6 +26,7 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
+    modCompileOnly "maven.modrinth:farmers-delight-fabric:${project.delight_version}"
     modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:${project.rei_version}"
     modCompileOnly "me.shedaniel:RoughlyEnoughItems-default-plugin-fabric:${project.rei_version}"
 }
