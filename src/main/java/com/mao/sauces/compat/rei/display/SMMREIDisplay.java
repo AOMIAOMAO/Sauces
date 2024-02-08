@@ -1,7 +1,7 @@
 package com.mao.sauces.compat.rei.display;
 
 import com.mao.sauces.compat.rei.SaucesREIPlugin;
-import com.mao.sauces.recipe.SauceMakingMachineRecipe;
+import com.mao.sauces.recipe.SauceMakerRecipe;
 import me.shedaniel.rei.api.common.category.CategoryIdentifier;
 import me.shedaniel.rei.api.common.display.basic.BasicDisplay;
 import me.shedaniel.rei.api.common.util.EntryIngredients;
@@ -12,7 +12,7 @@ public class SMMREIDisplay extends BasicDisplay {
     private final int inputCount;
     private final int processtime;
 
-    public SMMREIDisplay(SauceMakingMachineRecipe recipe) {
+    public SMMREIDisplay(SauceMakerRecipe recipe) {
         super(EntryIngredients.ofIngredients(recipe.getIngredients()), Collections.singletonList(EntryIngredients.of(recipe.getOutput())));
         this.inputCount = recipe.getInputCount();
         this.processtime = recipe.getProcesstime();

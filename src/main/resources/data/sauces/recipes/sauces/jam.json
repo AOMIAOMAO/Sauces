@@ -1,9 +1,9 @@
 {
-  "type": "sauces:sauce_making_machine",
+  "type": "sauces:sauce_maker",
   "ingredient": {
     "tag": "sauces:fruit"
   },
   "inputCount": 3,
   "result": "sauces:jam",
-  "processtime": 150
+  "processtime": 300
 }

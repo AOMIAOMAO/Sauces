@@ -18,7 +18,7 @@ public class VillageTradesRegistry {
 
             factories.add((entity, random) -> new TradeOffer(
                     new ItemStack(Items.EMERALD, random.nextBetween(price - 1, price + 1)),
-                    new ItemStack(ItemsRegistry.SAUCE_MAKING_MACHINE),
+                    new ItemStack(ItemsRegistry.SAUCE_MAKER),
                     12, 4, 0.05f));
         });
 

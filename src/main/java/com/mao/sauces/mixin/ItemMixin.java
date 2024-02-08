@@ -27,8 +27,10 @@ public class ItemMixin {
         }
     }
 
-    @Inject(method = "hasGlint", at = @At("RETURN"), cancellable = true)
+    @Inject(method = "hasGlint", at = @At("TAIL"), cancellable = true)
     private void setGlintForFood(ItemStack stack, CallbackInfoReturnable<Boolean> cir) {
-        cir.setReturnValue(stack.isFood() && stack.hasNbt() && !(stack.getItem() instanceof SuspiciousStewItem) || stack.hasEnchantments());
+        if(stack.isFood() && stack.hasNbt() && !(stack.getItem() instanceof SuspiciousStewItem)){
+            cir.setReturnValue(true);
+        }
     }
 }

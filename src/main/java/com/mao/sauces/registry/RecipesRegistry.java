@@ -1,8 +1,8 @@
 package com.mao.sauces.registry;
 
 import com.mao.sauces.Sauces;
-import com.mao.sauces.recipe.SauceMakingMachineRecipe;
-import com.mao.sauces.recipe.SauceMakingMachineRecipeSerializer;
+import com.mao.sauces.recipe.SauceMakerRecipe;
+import com.mao.sauces.recipe.SauceMakerRecipeSerializer;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.RecipeType;
 import net.minecraft.registry.Registries;
@@ -12,11 +12,11 @@ import net.minecraft.util.Identifier;
 public class RecipesRegistry {
 
     private static void recipe(RecipeSerializer<?> serializer, RecipeType<?> type, String id) {
-        Registry.register(Registries.RECIPE_TYPE, new Identifier(Sauces.MOD_ID, id), type);
-        Registry.register(Registries.RECIPE_SERIALIZER, new Identifier(Sauces.MOD_ID, id), serializer);
+        Registry.register(Registries.RECIPE_TYPE, Sauces.asID(id), type);
+        Registry.register(Registries.RECIPE_SERIALIZER, Sauces.asID(id), serializer);
     }
 
     public static void registerModRecipes() {
-        recipe(SauceMakingMachineRecipeSerializer.INSTANCE, SauceMakingMachineRecipe.Type.INSTANCE, "sauce_making_machine");
+        recipe(SauceMakerRecipeSerializer.INSTANCE, SauceMakerRecipe.Type.INSTANCE, "sauce_maker");
     }
 }

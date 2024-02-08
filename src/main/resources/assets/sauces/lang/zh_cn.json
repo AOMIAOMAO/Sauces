@@ -11,6 +11,7 @@
   "item.sauces.black_pepper_sauce": "黑胡椒酱瓶",
   "item.sauces.chilli_sauce": "辣椒酱瓶",
   "item.sauces.peanut_butter": "花生酱瓶",
+  "item.sauces.pitcher_pod_sauce": "瓶子草荚果酱瓶",
 
   "item.sauces.sauces.salad_dressing": "酱料: 沙拉酱",
   "item.sauces.sauces.jam": "酱料: 果酱",
@@ -21,14 +22,14 @@
   "item.sauces.sauces.chilli_sauce": "酱料: 辣椒酱",
   "item.sauces.sauces.peanut_butter": "酱料: 花生酱",
   "item.sauces.sauces.ketchup": "酱料:番茄酱",
+  "item.sauces.sauces.pitcher_pod_sauce": "酱料：瓶子草荚果酱",
 
   "block.sauces.plate_block": "木盘",
-  "block.sauces.sauce_making_machine_block": "酱料制作机",
+  "block.sauces.sauce_maker": "酱料机",
 
   "entity.minecraft.villager.sauce_chef": "酱料师",
 
   "subtitles.sauces.spreading": "涂酱中",
-  "subtitles.sauces.working": "烦人的嗡嗡声",
   "subtitles.sauces.work_finished":"叮~",
 
   "tips.player.plate": "这玩意能吃？",

@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SMMREICategory implements DisplayCategory<SMMREIDisplay> {
-    private static final Identifier GUI_TEXTURE = new Identifier(Sauces.MOD_ID, "textures/gui/sauce_making_machine_rei.png");
+    private static final Identifier GUI_TEXTURE = new Identifier(Sauces.MOD_ID, "textures/gui/sauce_maker_rei.png");
 
 
     @Override
@@ -31,12 +31,12 @@ public class SMMREICategory implements DisplayCategory<SMMREIDisplay> {
 
     @Override
     public Text getTitle() {
-        return Text.translatable(BlocksRegistry.SAUCE_MAKING_MACHINE_BLOCK.getTranslationKey());
+        return Text.translatable(BlocksRegistry.SAUCE_MAKER_BLOCK.getTranslationKey());
     }
 
     @Override
     public Renderer getIcon() {
-        return EntryStacks.of(BlocksRegistry.SAUCE_MAKING_MACHINE_BLOCK);
+        return EntryStacks.of(BlocksRegistry.SAUCE_MAKER_BLOCK);
     }
 
     @Override

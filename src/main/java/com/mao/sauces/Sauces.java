@@ -4,6 +4,7 @@ import com.mao.sauces.event.UseOnBlockEvent;
 import com.mao.sauces.registry.*;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
+import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -25,5 +26,9 @@ public class Sauces implements ModInitializer {
         UseBlockCallback.EVENT.register(new UseOnBlockEvent());
 
         LOGGER.info("Sauces mod registration completed!");
+    }
+
+    public static Identifier asID(String id){
+        return new Identifier(MOD_ID, id);
     }
 }

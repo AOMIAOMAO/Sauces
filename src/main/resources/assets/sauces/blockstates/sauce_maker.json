@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "sauces:block/sauce_maker"},
+    "facing=east":  { "model": "sauces:block/sauce_maker", "y":  90},
+    "facing=south": { "model": "sauces:block/sauce_maker", "y": 180},
+    "facing=west":  { "model": "sauces:block/sauce_maker", "y": 270}
+  }
+}

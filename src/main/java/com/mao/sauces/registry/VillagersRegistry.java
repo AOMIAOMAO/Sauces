@@ -15,22 +15,21 @@ import net.minecraft.world.poi.PointOfInterestType;
 
 public class VillagersRegistry {
     public static final RegistryKey<PointOfInterestType> SAUCES_POI_KEY = poiKey("saucepoi");
-    public static final PointOfInterestType SAUCES_POI = registerPoi("saucepoi", BlocksRegistry.SAUCE_MAKING_MACHINE_BLOCK);
-
+    public static final PointOfInterestType SAUCES_POI = registerPoi("saucepoi", BlocksRegistry.SAUCE_MAKER_BLOCK);
     public static final VillagerProfession SAUCE_CHEF = registerProfession("sauce_chef", SAUCES_POI_KEY);
 
     private static VillagerProfession registerProfession(String name, RegistryKey<PointOfInterestType> type) {
-        return Registry.register(Registries.VILLAGER_PROFESSION, new Identifier(Sauces.MOD_ID, name),
+        return Registry.register(Registries.VILLAGER_PROFESSION, Sauces.asID(name),
                 new VillagerProfession(name, entry -> entry.matchesKey(type), entry -> entry.matchesKey(type),
                         ImmutableSet.of(), ImmutableSet.of(), SoundEvents.ENTITY_VILLAGER_WORK_FISHERMAN));
     }
 
     private static PointOfInterestType registerPoi(String name, Block block) {
-        return PointOfInterestHelper.register(new Identifier(Sauces.MOD_ID, name), 1, 1, block);
+        return PointOfInterestHelper.register(Sauces.asID(name), 1, 1, block);
     }
 
     private static RegistryKey<PointOfInterestType> poiKey(String name) {
-        return RegistryKey.of(RegistryKeys.POINT_OF_INTEREST_TYPE, new Identifier(Sauces.MOD_ID, name));
+        return RegistryKey.of(RegistryKeys.POINT_OF_INTEREST_TYPE, Sauces.asID(name));
     }
 
     public static void registerVillagers() {

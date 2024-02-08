@@ -16,7 +16,7 @@ public class ItemGroupsRegistry {
     public static void registerModItemGroups() {
         Registry.register(Registries.ITEM_GROUP, ITEM_GROUP, FabricItemGroup.builder()
                 .displayName(Text.translatable("itemGroup.sauces.main"))
-                .icon(ItemsRegistry.SAUCE_MAKING_MACHINE::getDefaultStack)
+                .icon(ItemsRegistry.SAUCE_MAKER::getDefaultStack)
                 .build()
         );
     }

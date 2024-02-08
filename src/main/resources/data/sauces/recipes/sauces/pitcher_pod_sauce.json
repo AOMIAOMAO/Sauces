@@ -1,0 +1,9 @@
+{
+  "type": "sauces:sauce_maker",
+  "ingredient": {
+    "item": "minecraft:pitcher_pod"
+  },
+  "inputCount": 1,
+  "result": "sauces:pitcher_pod_sauce",
+  "processtime": 400
+}
