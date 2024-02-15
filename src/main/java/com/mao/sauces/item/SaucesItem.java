@@ -7,10 +7,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
 import net.minecraft.sound.SoundCategory;
-import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 
 import java.util.HashMap;
@@ -44,10 +41,5 @@ public class SaucesItem extends Item {
     public static String getSauces(ItemStack stack) {
         assert stack.getNbt() != null;
         return stack.getNbt().getString("sauces");
-    }
-
-    @Override
-    public int getItemBarColor(ItemStack stack) {
-        return MathHelper.packRgb(255, 250, 250);
     }
 }

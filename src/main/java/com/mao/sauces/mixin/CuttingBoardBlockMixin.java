@@ -28,7 +28,7 @@ public class CuttingBoardBlockMixin {
         if (blockEntity instanceof CuttingBoardBlockEntity cuttingBoardBlockEntity) {
             ItemStack stack = player.getStackInHand(player.getActiveHand());
             ItemStack stack1 = cuttingBoardBlockEntity.getStack(0);
-            if (!stack1.isEmpty() && stack.getItem() instanceof SaucesItem sauce && stack1.isFood() && !stack1.hasNbt()) {
+            if (stack.getNbt() != null && !stack1.isEmpty() && stack.getItem() instanceof SaucesItem sauce && stack1.isFood() && !stack.getNbt().getString("sauces").isEmpty()) {
                 sauce.spreadSauces(stack1, player);
                 spawnCuttingParticles(world, pos, stack1, 10);
                 stack.damage(1, player, p -> p.sendToolBreakStatus(p.getActiveHand()));

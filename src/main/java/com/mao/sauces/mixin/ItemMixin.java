@@ -21,7 +21,7 @@ public class ItemMixin {
 
     @Inject(method = "appendTooltip", at = @At("HEAD"))
     private void appendTooltipForFood(ItemStack stack, World world, List<Text> tooltip, TooltipContext context, CallbackInfo ci) {
-        if (stack.isFood() && stack.hasNbt() && !(stack.getItem() instanceof SuspiciousStewItem)) {
+        if (stack.getNbt() != null && stack.isFood() && !stack.getNbt().getString("sauces").isEmpty()) {
             String sauces = SaucesItem.getSauces(stack);
             tooltip.add(Text.translatable("item.sauces.sauces." + sauces).formatted(Formatting.BLUE));
         }
@@ -29,7 +29,7 @@ public class ItemMixin {
 
     @Inject(method = "hasGlint", at = @At("TAIL"), cancellable = true)
     private void setGlintForFood(ItemStack stack, CallbackInfoReturnable<Boolean> cir) {
-        if(stack.isFood() && stack.hasNbt() && !(stack.getItem() instanceof SuspiciousStewItem)){
+        if (stack.getNbt() != null && stack.isFood() && !stack.getNbt().getString("sauces").isEmpty()) {
             cir.setReturnValue(true);
         }
     }

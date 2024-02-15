@@ -25,10 +25,9 @@ public class LivingEntityMixin {
             int randomDuration = random.nextInt(20 * 90, 120 * 20);
             int randomAmplifier = random.nextInt(2);
 
-            if (stack.isFood() && stack.hasNbt() && effect != null) {
+            if (stack.isFood() && !stack.getNbt().getString("sauces").isEmpty() && effect != null) {
                 targetEntity.addStatusEffect(new StatusEffectInstance(effect, randomDuration, randomAmplifier));
             }
         }
     }
-
 }

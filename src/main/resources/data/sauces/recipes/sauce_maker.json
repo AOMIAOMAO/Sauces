@@ -9,7 +9,7 @@
       "tag": "minecraft:wooden_slabs"
     },
     "o": {
-      "item": "minecraft:stone_slab"
+      "item": "minecraft:smooth_stone_slab"
     }
   },
   "pattern": [

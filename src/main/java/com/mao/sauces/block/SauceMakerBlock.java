@@ -41,7 +41,7 @@ public class SauceMakerBlock extends BlockWithEntity {
             ItemStack stack = player.getStackInHand(hand);
 
             if (!entity.isProcessing()) {
-                if (!player.isSneaking()) {
+                if (!hit.getSide().equals(Direction.UP)) {
                     if (itemStack.isEmpty()) {
                         entity.setStack(0, stack.split(stack.getCount()));
                         entity.setItemDirection(player.getHorizontalFacing());

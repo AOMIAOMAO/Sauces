@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SMMREICategory implements DisplayCategory<SMMREIDisplay> {
-    private static final Identifier GUI_TEXTURE = new Identifier(Sauces.MOD_ID, "textures/gui/sauce_maker_rei.png");
+    private static final Identifier GUI_TEXTURE = Sauces.asID("textures/gui/sauce_maker_rei.png");
 
 
     @Override
@@ -49,11 +49,11 @@ public class SMMREICategory implements DisplayCategory<SMMREIDisplay> {
 
         widgets.add(Widgets.createTexturedWidget(GUI_TEXTURE, new Rectangle(bgBounds.x, bgBounds.y, 96, 57), 6, 8));
 
-        widgets.add(Widgets.createSlot(new Point(bgBounds.x + 8, bgBounds.y + 2))
-                .entries(display.getInputEntries().get(1)).markInput().disableBackground());
+        widgets.add(Widgets.createSlot(new Point(bgBounds.x + 6, bgBounds.y + 2))
+                .entries(display.getContainer()).markInput().disableBackground());
         widgets.add(Widgets.createSlot(new Point(bgBounds.x + 78, bgBounds.y + 19))
                 .entries(display.getOutputEntries().get(0)).markOutput().disableBackground());
-        Slot slot = Widgets.createSlot(new Point(bgBounds.x + 29, bgBounds.y + 22))
+        Slot slot = Widgets.createSlot(new Point(bgBounds.x + 29, bgBounds.y + 19))
                 .entries(display.getInputEntries().get(0)).markInput().disableBackground();
         widgets.add(slot);
 

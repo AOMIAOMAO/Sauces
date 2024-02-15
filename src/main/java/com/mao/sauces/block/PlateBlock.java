@@ -25,6 +25,7 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 public class PlateBlock extends BlockWithEntity {
+
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
 
     public PlateBlock(Settings settings) {

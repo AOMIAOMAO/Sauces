@@ -12,7 +12,7 @@ import me.shedaniel.rei.api.common.category.CategoryIdentifier;
 import me.shedaniel.rei.api.common.util.EntryStacks;
 
 public class SaucesREIPlugin implements REIClientPlugin {
-    public static final CategoryIdentifier<SMMREIDisplay> SMMREI_DISPLAY_CATEGORY = CategoryIdentifier.of(Sauces.MOD_ID, "sauce_making_machine");
+    public static final CategoryIdentifier<SMMREIDisplay> SMMREI_DISPLAY_CATEGORY = CategoryIdentifier.of(Sauces.MOD_ID, "sauce_maker");
 
     @Override
     public void registerDisplays(DisplayRegistry registry) {
