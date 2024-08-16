@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "sauces:block/plate"},
+    "facing=east":  { "model": "sauces:block/plate", "y":  90},
+    "facing=south": { "model": "sauces:block/plate", "y": 180},
+    "facing=west":  { "model": "sauces:block/plate", "y": 270}
+  }
+}

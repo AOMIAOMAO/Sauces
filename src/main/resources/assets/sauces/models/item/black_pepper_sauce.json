@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "sauces:item/black_pepper_sauce"
-  }
-}

@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "sauces:item/plate"
-  }
+  "parent": "sauces:block/plate"
 }

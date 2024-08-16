@@ -1,9 +1,0 @@
-{
-  "type": "sauces:sauce_maker",
-  "ingredient": {
-    "item": "minecraft:cocoa_beans"
-  },
-  "inputCount": 5,
-  "result": "sauces:chocolate_sauce",
-  "processtime": 300
-}

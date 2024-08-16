@@ -1,9 +1,0 @@
-{
-  "type": "sauces:sauce_maker",
-  "ingredient": {
-    "tag": "sauces:mushrooms"
-  },
-  "inputCount": 4,
-  "result": "sauces:mushroom_paste",
-  "processtime": 300
-}

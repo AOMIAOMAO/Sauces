@@ -1,9 +1,0 @@
-{
-  "type": "sauces:sauce_maker",
-  "ingredient": {
-    "tag": "c:crops/tomato"
-  },
-  "inputCount": 3,
-  "result": "sauces:ketchup",
-  "processtime": 300
-}

@@ -1,9 +1,11 @@
 {
+	"credit": "Made with Blockbench",
 	"parent": "block/block",
 	"textures": {
 		"2": "block/smooth_stone",
 		"3": "block/spruce_planks",
 		"4": "sauces:block/sauce_maker_side",
+		"5": "sauces:block/water",
 		"particle": "block/stone"
 	},
 	"elements": [
@@ -123,6 +125,19 @@
 				"up": {"uv": [3.25, 1, 2.25, 0], "rotation": 90, "texture": "#2"},
 				"down": {"uv": [2.75, 0, 2.5, 0.25], "rotation": 270, "texture": "#2"}
 			}
+		},
+		{
+			"from": [5, 4, 5],
+			"to": [11, 6, 11],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 4, 7]},
+			"faces": {
+				"north": {"uv": [0, 0, 6, 2], "texture": "#5"},
+				"east": {"uv": [0, 0, 6, 2], "texture": "#5"},
+				"south": {"uv": [0, 0, 6, 2], "texture": "#5"},
+				"west": {"uv": [0, 0, 6, 2], "texture": "#5"},
+				"up": {"uv": [0, 0, 6, 6], "texture": "#5"},
+				"down": {"uv": [0, 0, 6, 6], "texture": "#5"}
+			}
 		}
 	],
 	"display": {
@@ -165,7 +180,7 @@
 			"name": "group",
 			"origin": [8, 8, 8],
 			"color": 0,
-			"children": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+			"children": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 		}
 	]
 }

@@ -1,9 +1,19 @@
 {
   "type": "sauces:sauce_maker",
-  "ingredient": {
-    "tag": "sauces:fruit"
+  "ingredients": [
+    {
+        "item": "minecraft:apple"
+    },
+    {
+        "item": "minecraft:apple"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "makingtime": 200,
+  "container": {
+    "item":"minecraft:glass_bottle"
   },
-  "inputCount": 3,
-  "result": "sauces:jam",
-  "processtime": 300
+  "result": "sauces:jam"
 }

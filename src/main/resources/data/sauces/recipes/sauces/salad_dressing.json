@@ -1,9 +1,0 @@
-{
-  "type": "sauces:sauce_maker",
-  "ingredient": {
-    "item": "minecraft:egg"
-  },
-  "inputCount": 2,
-  "result": "sauces:salad_dressing",
-  "processtime": 300
-}

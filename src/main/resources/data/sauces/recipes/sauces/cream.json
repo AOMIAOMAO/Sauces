@@ -1,9 +1,0 @@
-{
-  "type": "sauces:sauce_maker",
-  "ingredient": {
-    "item": "minecraft:milk_bucket"
-  },
-  "inputCount": 1,
-  "result": "sauces:cream",
-  "processtime": 300
-}
