@@ -4,7 +4,7 @@
 		"2": "block/smooth_stone",
 		"3": "block/spruce_planks",
 		"4": "sauces:block/sauce_maker_side",
-		"particle": "block/stone"
+		"particle": "block/smooth_stone"
 	},
 	"elements": [
 		{

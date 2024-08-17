@@ -3,20 +3,30 @@
   "id": "sauces",
   "version": "${version}",
   "name": "Sauces",
-  "description": "",
-  "authors": [],
+  "description": "Let's make food fun",
+  "authors": [
+    "MaoMao(Aomiaomao)"
+  ],
   "contact": {
-    "repo": "No! Because this is a private mod "
+    "repo": "https://modrinth.com/mod/sauces",
+    "homepage": "https://github.com/AOMIAOMAO/Sauces",
+    "issues": "https://github.com/AOMIAOMAO/Sauces/issues"
   },
   "license": "MIT",
   "icon": "assets/sauces/icon.png",
   "environment": "*",
   "entrypoints": {
+    "fabric-datagen": [
+      "com.mao.sauces.SauceDataGen"
+    ],
     "client": [
       "com.mao.sauces.SaucesClient"
     ],
     "main": [
       "com.mao.sauces.Sauces"
+    ],
+    "emi": [
+      "com.mao.sauces.integration.emi.SaucesEmiPlugin"
     ]
   },
   "mixins": [

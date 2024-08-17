@@ -12,7 +12,7 @@ import net.minecraft.text.Text;
 public class ModItemGroup {
     public static final RegistryKey<ItemGroup> ITEM_GROUP_KEY = RegistryKey.of(Registries.ITEM_GROUP.getKey(), Sauces.id("main"));
     public static final ItemGroup ITEM_GROUP = FabricItemGroup.builder()
-            .icon(() -> new ItemStack(ModItems.JAM))
+            .icon(() -> new ItemStack(ModItems.SAUCE_MAKER))
             .displayName(Text.translatable("itemGroup.sauces"))
             .build();
 

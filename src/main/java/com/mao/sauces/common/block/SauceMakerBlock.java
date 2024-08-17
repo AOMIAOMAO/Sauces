@@ -15,6 +15,8 @@ import net.minecraft.item.Items;
 import net.minecraft.potion.PotionUtil;
 import net.minecraft.potion.Potions;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.util.*;
@@ -111,6 +113,7 @@ public class SauceMakerBlock extends BlockWithEntity {
         BlockState state = world.getBlockState(pos);
         if (PotionUtil.getPotion(stack) == Potions.WATER && !state.get(HAS_WATER)){
             world.setBlockState(pos, state.with(HAS_WATER, true));
+            world.playSound(null, pos, SoundEvents.ITEM_BOTTLE_EMPTY, SoundCategory.BLOCKS);
             player.setStackInHand(player.getActiveHand(), ItemUsage.exchangeStack(stack, player, new ItemStack(Items.GLASS_BOTTLE)));
             return true;
         }

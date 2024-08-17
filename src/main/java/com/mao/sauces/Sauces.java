@@ -16,9 +16,11 @@ public class Sauces implements ModInitializer {
         ModBlocks.registerBlocks();
         ModRecipes.registerRecipes();
         ModEvents.registerEvents();
+        ModVillagers.registerVillage();
+        ModTrades.registerTrades();
+        ModEffects.registerEffect();
         ModItemGroup.registerItemGroup();
         ModBlockEntityTypes.registerBlockEntityTypes();
-        LOGGER.info("Everything is Goooood!");
     }
 
     public static Identifier id(String id){

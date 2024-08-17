@@ -1,0 +1,19 @@
+{
+  "type": "sauces:sauce_maker",
+  "ingredients": [
+    {
+      "tag": "c:crops/tomato"
+    },
+    {
+      "tag": "c:crops/tomato"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "makingtime": 200,
+  "container": {
+    "item":"minecraft:glass_bottle"
+  },
+  "result": "sauces:ketchup"
+}

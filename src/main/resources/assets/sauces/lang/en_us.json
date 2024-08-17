@@ -2,9 +2,26 @@
   "itemGroup.sauces": "Sauces",
 
   "item.sauces.jam": "Jam",
+  "item.sauces.ketchup": "Ketchup",
+  "item.sauces.mayonnaise": "Mayonnaise",
+  "item.sauces.chocolate_sauce": "Chocolate Sauce",
+  "item.sauces.creamy_peppercorn_sauce": "Creamy Peppercorn Sauce",
+  "item.sauces.chilli_sauce": "Chilli Sauce",
+  "item.sauces.cream": "Cream",
+  "item.sauces.peanut_butter": "Peanut Butter",
 
-  "item.sauces.food.tooltip": "Sauces: ",
-  "item.sauces.food.effect.tooltip": "After eating: ",
+  "entity.minecraft.villager.sauce_chef": "Sauce Chef",
+
+  "effect.sauces.craving": "Craving",
+  "effect.sauces.silky": "Silky",
+  "effect.sauces.flavorful": "Flavorful",
+
+  "item.sauces.food.sauces.tooltip": "Sauces: ",
+  "item.sauces.food.effect.tooltip": "Effect: ",
+  "item.sauces.food.hunger.tooltip": "replenished 1 hunger value",
+
+  "sauces.emi.makingtime": "%s s",
+  "emi.category.sauces.sauce_maker": "Sauce Maker",
 
   "block.sauces.sauce_maker": "Sauce Maker",
   "block.sauces.plate": "Plate"

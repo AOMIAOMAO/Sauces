@@ -2,10 +2,27 @@
   "itemGroup.sauces": "涂酱",
 
   "item.sauces.jam": "果酱",
+  "item.sauces.ketchup": "番茄酱",
+  "item.sauces.mayonnaise": "蛋黄酱",
+  "item.sauces.chocolate_sauce": "巧克力酱",
+  "item.sauces.creamy_peppercorn_sauce": "奶油胡椒酱",
+  "item.sauces.chilli_sauce": "辣椒酱",
+  "item.sauces.cream": "奶油",
+  "item.sauces.peanut_butter": "花生酱",
 
-  "item.sauces.food.tooltip": "酱料: ",
-  "item.sauces.food.effect.tooltip": "吃下后:",
+  "entity.minecraft.villager.sauce_chef": "制酱师",
 
-  "block.sauces.sauce_maker": "Sauce Maker",
+  "effect.sauces.craving": "食欲",
+  "effect.sauces.silky": "丝滑",
+  "effect.sauces.flavorful": "美味",
+
+  "sauces.emi.makingtime": "%%s s",
+  "emi.category.sauces.sauce_maker": "酱料制作机",
+
+  "item.sauces.food.sauces.tooltip": "酱料: ",
+  "item.sauces.food.effect.tooltip": "效果:",
+  "item.sauces.food.hunger.tooltip": "补充1点饥饿值",
+
+  "block.sauces.sauce_maker": "酱汁制作机",
   "block.sauces.plate": "盘子"
 }

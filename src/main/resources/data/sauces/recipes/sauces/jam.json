@@ -1,12 +1,28 @@
 {
   "type": "sauces:sauce_maker",
   "ingredients": [
-    {
+    [
+      {
         "item": "minecraft:apple"
-    },
-    {
+      },
+      {
+        "item": "minecraft:melon_slice"
+      },
+      {
+        "tag": "c:foods/berries"
+      }
+    ],
+    [
+      {
         "item": "minecraft:apple"
-    },
+      },
+      {
+        "item": "minecraft:melon_slice"
+      },
+      {
+        "tag": "c:foods/berries"
+      }
+    ],
     {
       "item": "minecraft:sugar"
     }

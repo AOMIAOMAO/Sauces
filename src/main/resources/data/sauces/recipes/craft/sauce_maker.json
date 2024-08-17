@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " P ",
+    " G ",
+    " S "
+  ],
+  "key": {
+    "P": {
+      "tag": "minecraft:planks"
+    },
+    "G": {
+      "item": "minecraft:glass"
+    },
+    "S": {
+      "item": "minecraft:smooth_stone"
+    }
+  },
+  "result": {
+    "item": "sauces:sauce_maker",
+    "count": 1
+  }
+}

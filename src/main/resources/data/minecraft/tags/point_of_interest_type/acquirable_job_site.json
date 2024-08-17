@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "sauces:sauce_chef_poi",
+      "required": false
+    }
+  ]
+}

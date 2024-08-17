@@ -1,0 +1,19 @@
+{
+  "type": "sauces:sauce_maker",
+  "ingredients": [
+    {
+      "item": "minecraft:egg"
+    },
+    {
+      "item": "minecraft:milk_bucket"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "makingtime": 200,
+  "container": {
+    "item":"minecraft:glass_bottle"
+  },
+  "result": "sauces:cream"
+}

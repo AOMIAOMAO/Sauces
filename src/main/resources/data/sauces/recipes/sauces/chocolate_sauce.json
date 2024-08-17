@@ -1,0 +1,19 @@
+{
+  "type": "sauces:sauce_maker",
+  "ingredients": [
+    {
+      "item": "minecraft:cocoa_beans"
+    },
+    {
+      "item": "minecraft:cocoa_beans"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "makingtime": 200,
+  "container": {
+    "item":"minecraft:glass_bottle"
+  },
+  "result": "sauces:chocolate_sauce"
+}
