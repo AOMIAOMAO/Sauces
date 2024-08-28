@@ -12,9 +12,9 @@
 
   "entity.minecraft.villager.sauce_chef": "Sauce Chef",
 
-  "effect.sauces.craving": "Craving",
   "effect.sauces.silky": "Silky",
   "effect.sauces.flavorful": "Flavorful",
+  "effect.sauces.craving": "Craving",
 
   "item.sauces.food.sauces.tooltip": "Sauces: ",
   "item.sauces.food.effect.tooltip": "Effect: ",

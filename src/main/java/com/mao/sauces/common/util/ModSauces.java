@@ -2,11 +2,10 @@ package com.mao.sauces.common.util;
 
 
 import com.mao.sauces.registry.ModEffects;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.FoodComponent;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.Formatting;
@@ -45,14 +44,6 @@ public enum ModSauces {
 
     public String getName() {
         return name;
-    }
-
-    public void eatFood(LivingEntity le){
-        Random random = new Random();
-        int duration = random.nextInt(20 * 90, 20 * 120);
-        int amplifier = random.nextInt(0, 1);
-        le.addStatusEffect(new StatusEffectInstance(getEffect(), duration, amplifier));
-        if (le instanceof PlayerEntity player) player.getHungerManager().add(2, 0.5f);
     }
 
     @Nullable

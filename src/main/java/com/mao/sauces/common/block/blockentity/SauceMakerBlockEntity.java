@@ -2,7 +2,6 @@ package com.mao.sauces.common.block.blockentity;
 
 import com.mao.sauces.common.block.SauceMakerBlock;
 import com.mao.sauces.common.recipe.SauceMakerRecipe;
-import com.mao.sauces.common.recipe.SauceMakerRecipeInv;
 import com.mao.sauces.registry.ModBlockEntityTypes;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -17,14 +16,11 @@ import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
-public class SauceMakerBlockEntity extends BlockEntity implements BlockEntityInv, SauceMakerRecipeInv {
+public class SauceMakerBlockEntity extends BlockEntity implements BlockEntityInv{
     private final DefaultedList<ItemStack> inv = DefaultedList.ofSize(4, ItemStack.EMPTY);
     private int makingTime;
     private int makingTimeTotal;
@@ -43,34 +39,31 @@ public class SauceMakerBlockEntity extends BlockEntity implements BlockEntityInv
 
     public static void clientTick(World world, BlockPos pos, BlockState state, SauceMakerBlockEntity entity){
         Optional<SauceMakerRecipe> optional = world.getRecipeManager().getFirstMatch(SauceMakerRecipe.Type.INSTANCE, entity, world);
-        if (entity.getIngredients().size() == 3){
-            if (optional.isPresent()) {
-                SauceMakerRecipe recipe = optional.get();
-                if (entity.canMake(recipe)) {
-                    entity.isMaking = true;
-                    entity.rotationTime++;
-                }else {
-                    entity.isMaking = false;
-                    entity.rotationTime = 0;
-                }
+        if (optional.isPresent()) {
+            SauceMakerRecipe recipe = optional.get();
+            if (entity.canMake(recipe)) {
+                entity.isMaking = true;
+                entity.rotationTime++;
+            } else {
+                entity.isMaking = false;
+                entity.rotationTime = 0;
             }
+
         }
     }
 
     public void making(){
         if (world == null) return;
-        if (getIngredients().size() == 3){
-            Optional<SauceMakerRecipe> optional = world.getRecipeManager().getFirstMatch(SauceMakerRecipe.Type.INSTANCE, this, world);
+        Optional<SauceMakerRecipe> optional = world.getRecipeManager().getFirstMatch(SauceMakerRecipe.Type.INSTANCE, this, world);
 
-            if (optional.isPresent()){
-                SauceMakerRecipe recipe = optional.get();
-                if (canMake(recipe)) {
-                    makingTimeTotal = recipe.getMakingTime();
-                    makingTime++;
+        if (optional.isPresent()) {
+            SauceMakerRecipe recipe = optional.get();
+            if (canMake(recipe)) {
+                makingTimeTotal = recipe.getMakingTime();
+                makingTime++;
 
-                    if (makingTime == makingTimeTotal) {
-                        setResult(recipe);
-                    }
+                if (makingTime == makingTimeTotal) {
+                    setResult(recipe);
                 }
             }
         }
@@ -106,21 +99,6 @@ public class SauceMakerBlockEntity extends BlockEntity implements BlockEntityInv
     @Override
     public int getMaxCountPerStack() {
         return 1;
-    }
-
-    @Override
-    public @NotNull List<ItemStack> getIngredients() {
-        List<ItemStack> ret = new ArrayList<>();
-        if (isEmpty()) return ret;
-        for (int i = 0; i < 3; i++) {
-            if (!getStack(i).isEmpty()) ret.add(getStack(i));
-        }
-        return ret;
-    }
-
-    @Override
-    public @NotNull ItemStack getContainer() {
-        return getStack(3);
     }
 
     public boolean removeItems(PlayerEntity player){

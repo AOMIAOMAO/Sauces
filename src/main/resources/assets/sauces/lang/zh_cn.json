@@ -12,9 +12,9 @@
 
   "entity.minecraft.villager.sauce_chef": "制酱师",
 
-  "effect.sauces.craving": "食欲",
   "effect.sauces.silky": "丝滑",
   "effect.sauces.flavorful": "美味",
+  "effect.sauces.craving": "食欲",
 
   "sauces.emi.makingtime": "%%s s",
   "emi.category.sauces.sauce_maker": "酱料制作机",

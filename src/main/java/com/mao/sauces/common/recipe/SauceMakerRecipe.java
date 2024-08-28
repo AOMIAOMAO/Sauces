@@ -1,17 +1,14 @@
 package com.mao.sauces.common.recipe;
 
-import com.google.common.collect.Lists;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
+import net.minecraft.inventory.Inventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
-import net.minecraft.recipe.Ingredient;
-import net.minecraft.recipe.Recipe;
-import net.minecraft.recipe.RecipeSerializer;
-import net.minecraft.recipe.RecipeType;
+import net.minecraft.recipe.*;
 import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
@@ -23,7 +20,7 @@ import java.util.List;
 
 import static net.minecraft.recipe.ShapedRecipe.outputFromJson;
 
-public class SauceMakerRecipe implements Recipe<SauceMakerRecipeInv> {
+public class SauceMakerRecipe implements Recipe<Inventory> {
     public static final int INPUT_SIZE = 3;
 
     private final Identifier id;
@@ -48,23 +45,17 @@ public class SauceMakerRecipe implements Recipe<SauceMakerRecipeInv> {
     }
 
     @Override
-    public boolean matches(SauceMakerRecipeInv inventory, World world) {
-        List<Ingredient> testTarget = Lists.newArrayList(input);
-        List<ItemStack> tested = inventory.getIngredients();
-        if (tested.size() < INPUT_SIZE) return false;
-        for (ItemStack itemStack : tested) {
-            int i = getLatestMatched(testTarget, itemStack);
-            if (i == -1) return false;
-            else testTarget.remove(i);
+    public boolean matches(Inventory inventory, World world) {
+        RecipeMatcher recipeMatcher = new RecipeMatcher();
+        int i = 0;
+        for (int j = 0; j < INPUT_SIZE; ++j) {
+            ItemStack itemstack = inventory.getStack(j);
+            if (!itemstack.isEmpty()) {
+                ++i;
+                recipeMatcher.addInput(itemstack);
+            }
         }
-        return testTarget.isEmpty() && ItemStack.areItemsEqual(inventory.getStack(3), getContainer());
-    }
-
-    private int getLatestMatched(List<Ingredient> testTarget, ItemStack tested) {
-        for (int i = 0; i < testTarget.size(); i++) {
-            if (testTarget.get(i).test(tested)) return i;
-        }
-        return -1;
+        return i == this.input.size() && recipeMatcher.match(this, null) && ItemStack.areItemsEqual(inventory.getStack(3), getContainer());
     }
 
     @Override
@@ -75,7 +66,7 @@ public class SauceMakerRecipe implements Recipe<SauceMakerRecipeInv> {
     }
 
     @Override
-    public ItemStack craft(SauceMakerRecipeInv inventory, DynamicRegistryManager registryManager) {
+    public ItemStack craft(Inventory inventory, DynamicRegistryManager registryManager) {
         return this.result.copy();
     }
 

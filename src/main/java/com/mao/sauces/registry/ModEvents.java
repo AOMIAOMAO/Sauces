@@ -1,6 +1,5 @@
 package com.mao.sauces.registry;
 
-import com.mao.sauces.common.event.FinishUsingItemCallback;
 import com.mao.sauces.common.util.ModSauces;
 import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
@@ -17,14 +16,6 @@ import net.minecraft.util.math.BlockPos;
 public class ModEvents {
 
     public static void registerEvents(){
-        FinishUsingItemCallback.EVENT.register((world, stack, entity) -> {
-            ModSauces sauces = ModSauces.matching(stack);
-            if (sauces != null){
-               sauces.eatFood(entity);
-            }
-            return stack;
-        });
-
         UseBlockCallback.EVENT.register((player, world, hand, hitResult) -> {
             BlockPos pos = hitResult.getBlockPos();
             ItemStack stack = player.getStackInHand(hand);
